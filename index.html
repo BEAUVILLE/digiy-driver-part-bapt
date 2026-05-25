@@ -935,16 +935,44 @@
 (function(){
   const btn = document.getElementById("digiy-audio-driver");
   if(!btn || !("speechSynthesis" in window)) return;
+
+  function digiySpeakText(text){
+    return String(text || "")
+      .replace(/\bWave\b/g, "Wéïv")
+      .replace(/\bWouève\b/g, "Wéïv")
+      .replace(/\bWhatsApp\b/g, "Ouatsap")
+      .replace(/\bDIGIYLYFE\b/g, "Di-ji-laïf")
+      .replace(/\bRESA\b/g, "réservation")
+      .replace(/\bRÉSA\b/g, "réservation");
+  }
+
   const TEXTE = "Bienvenue dans DIGIY DRIVER. Ici, le chauffeur n'est pas perdu dans la masse. Il se présente proprement, avec sa photo, sa zone, son véhicule, son QR et son WhatsApp direct. Le client voit, scanne, contacte, et le terrain garde la main. Discrétion, ponctualité, savoir-vivre. DIGIYLYFE.";
   const synth = window.speechSynthesis;
   let playing = false;
-  function stop(){synth.cancel(); playing=false; btn.textContent="🎧 Écouter DIGIY";}
+
+  function resetButton(){
+    playing = false;
+    btn.textContent = "🎧 Écouter DIGIY";
+  }
+
+  function stop(){
+    synth.cancel();
+    resetButton();
+  }
+
   function play(){
     synth.cancel();
-    const utt = new SpeechSynthesisUtterance(TEXTE);
-    utt.lang = "fr-FR"; utt.rate = .86; utt.pitch = 1.02; utt.onend = stop;
-    synth.speak(utt); playing=true; btn.textContent="■ Arrêter";
+    const utt = new SpeechSynthesisUtterance(digiySpeakText(TEXTE));
+    utt.lang = "fr-FR";
+    utt.rate = .86;
+    utt.pitch = 1.02;
+    utt.onend = resetButton;
+    utt.onerror = resetButton;
+    synth.speak(utt);
+    playing = true;
+    btn.textContent = "■ Arrêter";
   }
+
   btn.addEventListener("click",()=> playing ? stop() : play());
   window.addEventListener("pagehide",stop);
 })();
@@ -953,3 +981,4 @@
 <!-- DIGIY DRIVER AMBASSADEUR — Vitrine publique premium QR/photo — 20260514 -->
 </body>
 </html>
+

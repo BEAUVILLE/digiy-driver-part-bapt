@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>DIGIY DRIVER AMBASSADEUR — Vitrine chauffeur</title>
   <meta name="theme-color" content="#071018" />
-  <meta name="description" content="DIGIY DRIVER AMBASSADEUR — une vitrine publique élégante pour trouver un chauffeur avec style, savoir-être, QR et contact WhatsApp direct." />
+  <meta name="description" content="DIGIY DRIVER AMBASSADEUR — vitrine chauffeur avec QR officiel DIGIYLYFE, contact WhatsApp direct, 0% commission et route directe terrain." />
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preconnect" href="https://api.qrserver.com" />
 
@@ -183,6 +183,44 @@
     .qr-copy{min-width:150px}
     .qr-copy strong{display:block;color:#fff4c7;font-size:13px;font-weight:950}
     .qr-copy span{display:block;margin-top:5px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.38;font-weight:800}
+
+    .official-stamp{
+      margin-top:14px;
+      display:grid;
+      gap:8px;
+      border-radius:22px;
+      border:1px solid rgba(245,205,102,.28);
+      background:linear-gradient(135deg,rgba(245,205,102,.12),rgba(32,178,107,.08));
+      padding:14px;
+      color:#fff1bd;
+      box-shadow:0 18px 42px rgba(0,0,0,.18);
+    }
+    .official-stamp b{
+      display:block;
+      font-size:14px;
+      font-weight:950;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:#ffe8ae;
+    }
+    .official-stamp span{
+      display:block;
+      color:rgba(248,250,252,.86);
+      font-size:13px;
+      line-height:1.55;
+      font-weight:850;
+    }
+    .official-qr-note{
+      border-radius:16px;
+      border:1px solid rgba(245,205,102,.22);
+      background:rgba(245,205,102,.08);
+      color:#fff1bd;
+      padding:9px 10px;
+      font-size:12px;
+      line-height:1.45;
+      font-weight:900;
+    }
+    .official-qr-note strong{color:#fff7d4}
 
     .card{
       margin-top:14px;border-radius:var(--radius);border:1px solid var(--line);
@@ -415,6 +453,10 @@
           <h1><span class="gold-text" data-i18n="hero_title">Un chauffeur, une tenue, une présence.</span></h1>
           <p class="lead" data-i18n="hero_sub">Choisis un chauffeur visible, appelle directement sur WhatsApp, scanne son QR et garde la relation simple. Ici, pas de bruit : du sérieux, du respect, du terrain.</p>
           <div class="signature" data-i18n="hero_signature">Discrétion • Ponctualité • Savoir-vivre • Contact direct</div>
+          <div class="official-stamp">
+            <b>QR officiel DIGIYLYFE · DRIVER</b>
+            <span>Ce QR ouvre une vraie route chauffeur : carte publique, WhatsApp direct, demande de trajet et visibilité terrain. 0% commission : la valeur du trajet reste dans la main du chauffeur.</span>
+          </div>
           <div class="badges">
             <span class="badge" data-i18n="hero_badge_1"><b>Ambassadeur</b> = une image propre sur la route</span>
             <span class="badge" data-i18n="hero_badge_2">📲 WhatsApp direct</span>
@@ -438,10 +480,10 @@
             </div>
             <div class="photo-row">
               <div class="qr-box">
-                <img id="heroQr" alt="QR code de la carte chauffeur DIGIY" src="" loading="lazy" />
+                <img id="heroQr" alt="QR officiel DIGIYLYFE de la carte chauffeur" src="" loading="lazy" />
                 <div class="qr-copy">
-                  <strong data-i18n="qr_title">QR chauffeur</strong>
-                  <span data-i18n="qr_sub">À poser sur affiche, téléphone, carte ou vitrine.</span>
+                  <strong data-i18n="qr_title">QR officiel DIGIYLYFE</strong>
+                  <span data-i18n="qr_sub">Carte chauffeur · WhatsApp direct · 0% commission.</span>
                 </div>
               </div>
             </div>
@@ -509,7 +551,7 @@
 
     <section class="card footCta">
       <div class="big" data-i18n="cta_driver_title">Vous êtes chauffeur ambassadeur ?</div>
-      <div class="small" data-i18n="cta_driver_sub">Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR et un contact direct.</div>
+      <div class="small" data-i18n="cta_driver_sub">Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR officiel et un contact direct.</div>
       <div class="actions" style="justify-content:center; margin-top:13px;">
         <a class="btn btn-ghost" id="siteBtnBottom" href="#" data-i18n="nav_site">← Retour au site</a>
         <a class="btn btn-ghost" id="galleryBtnBottom" href="#drivers" data-i18n="nav_gallery">🚕 Nos chauffeurs</a>
@@ -535,25 +577,25 @@
       pill_class:"Sélection Ambassadeur",
       hero_eyebrow:"Vitrine publique premium",
       hero_title:"Un chauffeur, une tenue, une présence.",
-      hero_sub:"Choisis un chauffeur visible, appelle directement sur WhatsApp, scanne son QR et garde la relation simple. Ici, pas de bruit : du sérieux, du respect, du terrain.",
+      hero_sub:"Choisis un chauffeur visible, scanne son QR officiel DIGIYLYFE, contacte directement sur WhatsApp et garde la relation simple. Ici, pas de bruit : du sérieux, du respect, du terrain.",
       hero_signature:"Discrétion • Ponctualité • Savoir-vivre • Contact direct",
       hero_badge_1:"Ambassadeur = une image propre sur la route",
-      hero_badge_2:"📲 WhatsApp direct", hero_badge_3:"🧾 QR chauffeur", hero_badge_4:"0% commission",
+      hero_badge_2:"📲 WhatsApp direct", hero_badge_3:"🧾 QR officiel DIGIYLYFE", hero_badge_4:"0% commission",
       hero_site:"🌍 Retour site DIGIYLYFE", hero_hub:"🧭 Ouvrir le HUB", hero_tarifs:"📦 Voir les tarifs", hero_public_card:"🎴 Voir la carte chauffeur",
       photo_title:"Une belle route commence par une belle présentation.",
-      photo_sub:"Le client voit, comprend, scanne et contacte. Le chauffeur garde son nom, son lien, son argent et sa dignité.",
-      qr_title:"QR chauffeur", qr_sub:"À poser sur affiche, téléphone, carte ou vitrine.",
+      photo_sub:"Le client voit, comprend, scanne et contacte. Le chauffeur garde son nom, son lien, son argent, ses trajets et sa dignité.",
+      qr_title:"QR officiel DIGIYLYFE", qr_sub:"Carte chauffeur · WhatsApp direct · 0% commission.",
       section_title:"Trouver le bon chauffeur", section_sub:"Filtre par zone, ville ou véhicule. Puis contacte directement le profil qui inspire confiance.",
       badge_loading:"Chargement…", badge_public:"Galerie publique", badge_fallback:"Mode vitrine",
       nav_site:"← Retour au site", nav_gallery:"🚕 Nos chauffeurs", nav_public_card:"🎴 Carte chauffeur", nav_order:"📲 Demander un chauffeur", nav_recruit:"🦅 Rejoindre la sélection",
       panel_count_k:"Chauffeurs visibles", panel_online_k:"Contact direct", panel_zone_k:"Zones couvertes", panel_public_k:"Visibilité",
-      featured_title:"Carte chauffeur en vitrine", featured_sub:"Une fiche propre : photo, zone, véhicule, WhatsApp et QR. Le client n’a pas besoin de chercher, il comprend vite.", featured_badge:"Choix direct", featured_loading:"Chargement de la carte chauffeur…",
+      featured_title:"Carte chauffeur en vitrine", featured_sub:"Une fiche propre : photo, zone, véhicule, WhatsApp et QR officiel. Le client n’a pas besoin de chercher, il comprend vite.", featured_badge:"Choix direct", featured_loading:"Chargement de la carte chauffeur…",
       featured_empty:"Aucun chauffeur visible pour le moment. La vitrine reste prête avec QR et contact direct.", featured_profile:"Voir la fiche", featured_whatsapp:"WhatsApp", featured_order:"Demander ce chauffeur", featured_label:"Chauffeur en avant",
       label_zone:"📍 Zone recherchée", zone_all:"Toutes", label_search:"🔎 Nom, ville ou voiture", search_ph:"Nom, ville ou voiture…", label_avail:"📞 Contact", avail_all:"Tous les profils", avail_online:"WhatsApp direct", avail_offline:"À contacter",
       count_drivers:n=>`${n} chauffeur(s)`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone(s)`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
       empty_title:"Aucun chauffeur trouvé", empty_tag_1:"Change les filtres", empty_tag_2:"Ou passe par WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander un chauffeur",
-      driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service discret, ponctuel et direct.", driver_tagline:"Service discret au savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Voir la fiche", scan_label:"Scanner la fiche",
-      cta_driver_title:"Vous êtes chauffeur ambassadeur ?", cta_driver_sub:"Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR et un contact direct.", cta_become_driver:"Rejoindre la sélection", cta_order_ride:"Demander un chauffeur", cta_whatsapp:"WhatsApp support",
+      driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service discret, ponctuel et direct.", driver_tagline:"Service discret au savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Voir la fiche", scan_label:"QR officiel DIGIYLYFE",
+      cta_driver_title:"Vous êtes chauffeur ambassadeur ?", cta_driver_sub:"Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR officiel et un contact direct.", cta_become_driver:"Rejoindre la sélection", cta_order_ride:"Demander un chauffeur", cta_whatsapp:"WhatsApp support",
       fallback_title:"Vitrine prête — connexion galerie à vérifier", fallback_tag_1:"La source publique n’a pas répondu", fallback_tag_2:"Le QR et les liens restent disponibles", toast_fallback:"Vitrine en mode présentation"
     },
     wo: {
@@ -564,25 +606,25 @@
       pill_class:"Sélection Ambassadeur",
       hero_eyebrow:"Vitrine publique premium",
       hero_title:"Chauffeur, teey, présence.",
-      hero_sub:"Tànnal chauffeur bi nga gis, woo ko ci WhatsApp, scan QR bi. Fi, du bari wax : jëf ju leer, teey ak respect.",
+      hero_sub:"Tànnal chauffeur bi nga gis, scan QR officiel DIGIYLYFE bi, woo ko ci WhatsApp. Fi, du bari wax : jëf ju leer, teey ak respect.",
       hero_signature:"Discrétion • Ponctualité • Savoir-vivre • Contact direct",
       hero_badge_1:"Ambassadeur = melokaan bu rafet ci yoon wi",
-      hero_badge_2:"📲 WhatsApp direct", hero_badge_3:"🧾 QR chauffeur", hero_badge_4:"0% commission",
+      hero_badge_2:"📲 WhatsApp direct", hero_badge_3:"🧾 QR officiel DIGIYLYFE", hero_badge_4:"0% commission",
       hero_site:"🌍 Retour site DIGIYLYFE", hero_hub:"🧭 Ouvrir le HUB", hero_tarifs:"📦 Voir les tarifs", hero_public_card:"🎴 Xool carte chauffeur",
       photo_title:"Yoon wu rafet dafay tàmbalee ci présentation bu rafet.",
-      photo_sub:"Client bi gis, xam, scan, jokkook. Chauffeur bi mooy yor turam, lienam ak xaalisam.",
-      qr_title:"QR chauffeur", qr_sub:"À poser ci affiche, téléphone, carte walla vitrine.",
+      photo_sub:"Client bi gis, xam, scan, jokkook. Chauffeur bi mooy yor turam, lienam, trajet yi ak xaalisam.",
+      qr_title:"QR officiel DIGIYLYFE", qr_sub:"Carte chauffeur · WhatsApp direct · 0% commission.",
       section_title:"Seetal chauffeur bi gën", section_sub:"Filtre ci zone, dëkk walla voiture. Ba noppi jokkook profil bi nga gëm.",
       badge_loading:"Di yük…", badge_public:"Galerie publique", badge_fallback:"Mode vitrine",
       nav_site:"← Dellu ci site bi", nav_gallery:"🚕 Sunu chauffeurs", nav_public_card:"🎴 Carte chauffeur", nav_order:"📲 Demander chauffeur", nav_recruit:"🦅 Duggal ci sélection bi",
       panel_count_k:"Chauffeur yi", panel_online_k:"Contact direct", panel_zone_k:"Zone yi", panel_public_k:"Visibilité",
-      featured_title:"Carte chauffeur ci vitrine", featured_sub:"Fiche bu rafet : photo, zone, voiture, WhatsApp ak QR. Client bi xam lépp bu gaaw.", featured_badge:"Choix direct", featured_loading:"Di yük carte chauffeur bi…",
+      featured_title:"Carte chauffeur ci vitrine", featured_sub:"Fiche bu rafet : photo, zone, voiture, WhatsApp ak QR officiel. Client bi xam lépp bu gaaw.", featured_badge:"Choix direct", featured_loading:"Di yük carte chauffeur bi…",
       featured_empty:"Amul chauffeur bu ñuy won léegi. Vitrine bi am na QR ak contact direct.", featured_profile:"Xool fiche bi", featured_whatsapp:"WhatsApp", featured_order:"Demander chauffeur bii", featured_label:"Chauffeur ci kanam",
       label_zone:"📍 Zone bi", zone_all:"Yépp", label_search:"🔎 Tur, dëkk walla voiture", search_ph:"Tur, dëkk walla voiture…", label_avail:"📞 Contact", avail_all:"Profils yépp", avail_online:"WhatsApp direct", avail_offline:"À contacter",
       count_drivers:n=>`${n} chauffeur`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
       empty_title:"Amul chauffeur bu ñu gis", empty_tag_1:"Soppi filtre yi", empty_tag_2:"Walla WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander chauffeur",
-      driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service bu teey, ponctuel ak direct.", driver_tagline:"Service discret ak savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Xool fiche bi", scan_label:"Scan fiche bi",
-      cta_driver_title:"Yow, yaa di chauffeur ambassadeur ?", cta_driver_sub:"Duggal ci DIGIY DRIVER ak fiche bu rafet, QR ak contact direct.", cta_become_driver:"Duggal ci sélection bi", cta_order_ride:"Demander chauffeur", cta_whatsapp:"WhatsApp support",
+      driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service bu teey, ponctuel ak direct.", driver_tagline:"Service discret ak savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Xool fiche bi", scan_label:"QR officiel DIGIYLYFE",
+      cta_driver_title:"Yow, yaa di chauffeur ambassadeur ?", cta_driver_sub:"Duggal ci DIGIY DRIVER ak fiche bu rafet, QR officiel ak contact direct.", cta_become_driver:"Duggal ci sélection bi", cta_order_ride:"Demander chauffeur", cta_whatsapp:"WhatsApp support",
       fallback_title:"Vitrine bi pare na — connexion galerie à vérifier", fallback_tag_1:"Source publique bi tontuwul", fallback_tag_2:"QR ak liens yi baax nañu", toast_fallback:"Vitrine ci mode présentation"
     }
   };
@@ -594,7 +636,7 @@
   const SITE_URL = "https://digiylyfe.com/";
   const ORDER_RIDE_URL = "https://driver.digiylyfe.com/commander-course.html";
   const DRIVER_JOIN_URL = "https://commencer-a-payer.digiylyfe.com/?module=DRIVER";
-  const FEATURED_PUBLIC_CARD_URL = "https://beauville.github.io/galerie-chauffeurs/fiche-chauffeur.html?slug=card-ffe5d051-d028-4576-82e6-d7e1164b4fa0";
+  const FEATURED_PUBLIC_CARD_URL = "https://digiy-driver-part-bapt.digiylyfe.com/";
   const DEFAULT_DRIVER_PHOTO = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=82";
 
   let CURRENT_LANG = localStorage.getItem("digiy_lang") || "fr";
@@ -626,7 +668,7 @@
     return "/";
   }
   function digiyLocal(path){return digiyBasePath() + String(path || "").replace(/^\/+/,"");}
-  const PROFILE_URL = digiyLocal("fiche-chauffeur.html");
+  const PROFILE_URL = FEATURED_PUBLIC_CARD_URL;
   const GALLERY_URL = (()=>{const u = new URL(location.href); u.hash = "drivers"; return u.toString();})();
 
   function cleanPublicUrl(){
@@ -652,9 +694,11 @@
     return u.toString();
   }
   function profileUrlForDriver(d){
-    const u = new URL(PROFILE_URL, location.href);
-    if(d?.slug && !isSensitiveSlug(d.slug)) u.searchParams.set("slug",d.slug);
-    return u.toString();
+    const direct = d?.card_public_url || d?.public_url || d?.profile_url || d?.url || "";
+    if(direct){
+      try{ return new URL(direct, location.href).toString(); }catch(_){ return String(direct); }
+    }
+    return FEATURED_PUBLIC_CARD_URL;
   }
   function commanderUrlForDriver(d){
     const u = new URL(ORDER_RIDE_URL, location.href);
@@ -828,7 +872,7 @@
           <a class="btn btn-blue js-order-btn" href="${esc(order)}" rel="noopener" data-driver='${esc(JSON.stringify({name:d.name||"",whatsapp:wa||"",slug:d.slug||""}))}'>${esc(t("featured_order"))}</a>
         </div>
       </div>
-      <div class="featured-qr"><img src="${esc(qr)}" alt="QR code de ${esc(name)}" loading="lazy"><small>${esc(t("scan_label"))}</small></div>
+      <div class="featured-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><small><b>${esc(t("scan_label"))}</b><br>Contact direct · 0% commission</small></div>
     `;
     bindOrderButtons(featuredCardArea);
   }
@@ -873,7 +917,7 @@
               <a class="btn btn-ghost" href="${esc(profile)}" rel="noopener">${esc(t("btn_profile"))}</a>
               <a class="btn btn-blue js-order-btn" href="${esc(order)}" rel="noopener" data-driver='${payload}'>${esc(t("btn_order_ride"))}</a>
             </div>
-            <div class="mini-qr"><img src="${esc(qr)}" alt="QR code de ${esc(name)}" loading="lazy"><span>${esc(t("scan_label"))}</span></div>
+            <div class="mini-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><span>${esc(t("scan_label"))}<br>0% commission</span></div>
           </div>
         </article>`;
     }).join("");
@@ -946,7 +990,7 @@
       .replace(/\bRÉSA\b/g, "réservation");
   }
 
-  const TEXTE = "Bienvenue dans DIGIY DRIVER. Ici, le chauffeur n'est pas perdu dans la masse. Il se présente proprement, avec sa photo, sa zone, son véhicule, son QR et son WhatsApp direct. Le client voit, scanne, contacte, et le terrain garde la main. Discrétion, ponctualité, savoir-vivre. DIGIYLYFE.";
+  const TEXTE = "Bienvenue dans DIGIY DRIVER. Ici, le chauffeur n'est pas perdu dans la masse. Il se présente proprement, avec sa photo, sa zone, son véhicule, son QR officiel DIGIYLYFE et son WhatsApp direct. Le client voit, scanne, contacte et demande son trajet directement. Zéro commission. La valeur du trajet reste dans la main du chauffeur. Discrétion, ponctualité, savoir-vivre. DIGIYLYFE.";
   const synth = window.speechSynthesis;
   let playing = false;
 
@@ -978,7 +1022,8 @@
 })();
 </script>
 
-<!-- DIGIY DRIVER AMBASSADEUR — Vitrine publique premium QR/photo — 20260514 -->
+<!-- DIGIY DRIVER AMBASSADEUR — QR officiel DIGIYLYFE ajouté — 20260619 -->
 </body>
 </html>
+
 

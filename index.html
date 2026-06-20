@@ -441,6 +441,7 @@
         <div class="pill" id="countPill">…</div>
         <div class="lang-switch" aria-label="Changer la langue">
           <button id="lang-fr" class="active" type="button">FR</button>
+          <button id="lang-en" type="button">EN</button>
           <button id="lang-wo" type="button">WO</button>
         </div>
       </nav>
@@ -596,7 +597,8 @@
       empty_title:"Aucun chauffeur trouvé", empty_tag_1:"Change les filtres", empty_tag_2:"Ou passe par WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander un chauffeur",
       driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service discret, ponctuel et direct.", driver_tagline:"Service discret au savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Voir la fiche", scan_label:"QR officiel DIGIYLYFE",
       cta_driver_title:"Vous êtes chauffeur ambassadeur ?", cta_driver_sub:"Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR officiel et un contact direct.", cta_become_driver:"Rejoindre la sélection", cta_order_ride:"Demander un chauffeur", cta_whatsapp:"WhatsApp support",
-      fallback_title:"Vitrine prête — connexion galerie à vérifier", fallback_tag_1:"La source publique n’a pas répondu", fallback_tag_2:"Le QR et les liens restent disponibles", toast_fallback:"Vitrine en mode présentation"
+      fallback_title:"Vitrine prête — connexion galerie à vérifier", fallback_tag_1:"La source publique n’a pas répondu", fallback_tag_2:"Le QR et les liens restent disponibles", toast_fallback:"Vitrine en mode présentation",
+      audio_button:"🎧 Écouter DIGIY"
     },
     wo: {
       eyebrow:"DIGIY DRIVER AMBASSADEUR",
@@ -625,9 +627,40 @@
       empty_title:"Amul chauffeur bu ñu gis", empty_tag_1:"Soppi filtre yi", empty_tag_2:"Walla WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander chauffeur",
       driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service bu teey, ponctuel ak direct.", driver_tagline:"Service discret ak savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Xool fiche bi", scan_label:"QR officiel DIGIYLYFE",
       cta_driver_title:"Yow, yaa di chauffeur ambassadeur ?", cta_driver_sub:"Duggal ci DIGIY DRIVER ak fiche bu rafet, QR officiel ak contact direct.", cta_become_driver:"Duggal ci sélection bi", cta_order_ride:"Demander chauffeur", cta_whatsapp:"WhatsApp support",
-      fallback_title:"Vitrine bi pare na — connexion galerie à vérifier", fallback_tag_1:"Source publique bi tontuwul", fallback_tag_2:"QR ak liens yi baax nañu", toast_fallback:"Vitrine ci mode présentation"
+      fallback_title:"Vitrine bi pare na — connexion galerie à vérifier", fallback_tag_1:"Source publique bi tontuwul", fallback_tag_2:"QR ak liens yi baax nañu", toast_fallback:"Vitrine ci mode présentation",
+      audio_button:"🎧 Écouter DIGIY"
     }
-  };
+  ,
+    en: {
+      eyebrow:"DIGIY DRIVER AMBASSADOR",
+      brand_title:"Mobility with style, calm and good manners.",
+      brand_sub:"A clean showcase for service posture, punctuality, discretion and human quality.",
+      top_site:"🌍 Site", top_hub:"🧭 HUB", top_tarifs:"📦 Pricing", top_public_card:"🎴 Driver card",
+      pill_class:"Ambassador Selection",
+      hero_eyebrow:"Premium public showcase",
+      hero_title:"One driver, one posture, one presence.",
+      hero_sub:"Choose a visible driver, scan the official DIGIYLYFE QR, contact directly on WhatsApp and keep the relationship simple. No noise here: serious service, respect and real terrain.",
+      hero_signature:"Discretion • Punctuality • Good manners • Direct contact",
+      hero_badge_1:"Ambassador = a clean image on the road",
+      hero_badge_2:"📲 Direct WhatsApp", hero_badge_3:"🧾 Official DIGIYLYFE QR", hero_badge_4:"0% commission",
+      hero_site:"🌍 Back to DIGIYLYFE", hero_hub:"🧭 Open the HUB", hero_tarifs:"📦 View pricing", hero_public_card:"🎴 View driver card",
+      photo_title:"A beautiful ride starts with a clean presentation.",
+      photo_sub:"The client sees, understands, scans and contacts. The driver keeps their name, link, money, rides and dignity.",
+      qr_title:"Official DIGIYLYFE QR", qr_sub:"Driver card · Direct WhatsApp · 0% commission.",
+      section_title:"Find the right driver", section_sub:"Filter by area, city or vehicle. Then contact directly the profile that inspires trust.",
+      badge_loading:"Loading…", badge_public:"Public gallery", badge_fallback:"Showcase mode",
+      nav_site:"← Back to site", nav_gallery:"🚕 Our drivers", nav_public_card:"🎴 Driver card", nav_order:"📲 Request a driver", nav_recruit:"🦅 Join the selection",
+      panel_count_k:"Visible drivers", panel_online_k:"Direct contact", panel_zone_k:"Covered areas", panel_public_k:"Visibility",
+      featured_title:"Driver card in showcase", featured_sub:"A clean profile: photo, area, vehicle, WhatsApp and official QR. The client does not need to search; they understand quickly.", featured_badge:"Direct choice", featured_loading:"Loading driver card…",
+      featured_empty:"No driver is visible for now. The showcase remains ready with QR and direct contact.", featured_profile:"View profile", featured_whatsapp:"WhatsApp", featured_order:"Request this driver", featured_label:"Featured driver",
+      label_zone:"📍 Search area", zone_all:"All", label_search:"🔎 Name, city or car", search_ph:"Name, city or car…", label_avail:"📞 Contact", avail_all:"All profiles", avail_online:"Direct WhatsApp", avail_offline:"To contact",
+      count_drivers:n=>`${n} driver(s)`, online_now:n=>`${n} direct WhatsApp`, zones_live:n=>`${n} area(s)`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
+      empty_title:"No driver found", empty_tag_1:"Change filters", empty_tag_2:"Or use WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Request a driver",
+      driver_default_name:"Ambassador Driver", driver_desc_default:"Public DIGIY DRIVER profile. Discreet, punctual and direct service.", driver_tagline:"Discreet service with good manners", tag_online:"📞 Direct WhatsApp", tag_offline:"🕊️ To contact", pill_public:"Selected", btn_whatsapp:"WhatsApp", btn_profile:"View profile", scan_label:"Official DIGIYLYFE QR",
+      cta_driver_title:"Are you an ambassador driver?", cta_driver_sub:"Join DIGIY DRIVER and show your service with a clean profile, an official QR and direct contact.", cta_become_driver:"Join the selection", cta_order_ride:"Request a driver", cta_whatsapp:"WhatsApp support",
+      fallback_title:"Showcase ready — gallery connection to check", fallback_tag_1:"The public source did not respond", fallback_tag_2:"QR and links remain available", toast_fallback:"Showcase mode",
+      audio_button:"🎧 Listen to DIGIY"
+    }};
 
   const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_tGHItRgeWDmGjnd0CK1DVQ_BIep4Ug3";
@@ -658,6 +691,22 @@
   function normPhone(p){let digits=String(p ?? "").replace(/\D/g,""); if(digits.length===9 && digits.startsWith("7")) digits="221"+digits; return digits || "";}
   function isSensitiveSlug(value){return /\d{7,}/.test(String(value || "").trim().toLowerCase());}
   function normalizeText(v){return String(v || "").trim();}
+
+  // DIGIY anti-404 terrain : Babacar / BABACARD retiré de cette vitrine.
+  // La galerie publique peut encore renvoyer l'ancien profil depuis Supabase ;
+  // on filtre avant toute statistique, carte mise en avant ou bouton.
+  function isBlockedDriverProfile(d){
+    const hay = [
+      d?.name, d?.title, d?.display_name, d?.slug, d?.card_public_url,
+      d?.public_url, d?.profile_url, d?.url, d?.description, d?.city, d?.zone
+    ].join(" " ).toLowerCase();
+
+    return /babacar|baba\s*card|babacard/.test(hay);
+  }
+
+  function cleanDriverRows(rows){
+    return (Array.isArray(rows) ? rows : []).filter(d => !isBlockedDriverProfile(d));
+  }
   function initials(name){return String(name||"").trim().split(/\s+/).filter(Boolean).slice(0,2).map(p=>p[0]?.toUpperCase()||"").join("") || "DA";}
   function qrUrl(data,size=180){return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&margin=8&data=${encodeURIComponent(data)}`;}
 
@@ -752,7 +801,7 @@
     if(q){const hay=[d.name,d.city,d.zone,d.car,d.vehicle_label,d.description].join(" ").toLowerCase(); if(!hay.includes(q)) return false;}
     return true;
   }
-  function getFilteredItems(){return sortDrivers(ALL.filter(passes));}
+  function getFilteredItems(){return sortDrivers(cleanDriverRows(ALL).filter(passes));}
 
 
   function moneyFcfa(v){
@@ -822,12 +871,22 @@
     const rows = routesForDriver(d);
     if(!rows.length) return "";
 
+    const title = CURRENT_LANG === "en" ? "🚕 Suggested rides" : (CURRENT_LANG === "wo" ? "🚕 Trajet yi ñuy joxe" : "🚕 Trajets proposés");
+    const lead = CURRENT_LANG === "en"
+      ? "Usual rides, airport transfers, long distances and driver availability. Indicative prices to confirm directly with the driver."
+      : (CURRENT_LANG === "wo"
+        ? "Trajets yu bari, transfert aéroport, yoon yu gudd ak mise à disposition. Prix yi war nañu leen confirmer directement ak chauffeur bi."
+        : "Trajets habituels, transferts aéroport, longues distances et mise à disposition. Prix indicatifs à confirmer directement avec le chauffeur.");
+    const confirm = CURRENT_LANG === "en"
+      ? "📞 Direct confirmation on WhatsApp depending on time, luggage, waiting or detour."
+      : (CURRENT_LANG === "wo"
+        ? "📞 Confirmation directe ci WhatsApp selon waxtu, bagage, attente walla détour."
+        : "📞 Confirmation directe sur WhatsApp selon l’heure, les bagages, l’attente ou le détour.");
+
     return `
       <div class="routesBlock">
-        <div class="routesBlockTitle">🚕 Trajets proposés</div>
-        <div class="routesBlockLead">
-          Trajets habituels, transferts aéroport, longues distances et mise à disposition. Prix indicatifs à confirmer directement avec le chauffeur.
-        </div>
+        <div class="routesBlockTitle">${esc(title)}</div>
+        <div class="routesBlockLead">${esc(lead)}</div>
         <div class="routesList">
           ${rows.map(r => `
             <div class="routeLine">
@@ -836,7 +895,7 @@
             </div>
           `).join("")}
         </div>
-        <div class="routeConfirm">📞 Confirmation directe sur WhatsApp selon l’heure, les bagages, l’attente ou le détour.</div>
+        <div class="routeConfirm">${esc(confirm)}</div>
       </div>
     `;
   }
@@ -872,7 +931,7 @@
           <a class="btn btn-blue js-order-btn" href="${esc(order)}" rel="noopener" data-driver='${esc(JSON.stringify({name:d.name||"",whatsapp:wa||"",slug:d.slug||""}))}'>${esc(t("featured_order"))}</a>
         </div>
       </div>
-      <div class="featured-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><small><b>${esc(t("scan_label"))}</b><br>Contact direct · 0% commission</small></div>
+      <div class="featured-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><small><b>${esc(t("scan_label"))}</b><br>${esc(CURRENT_LANG === "en" ? "Direct contact · 0% commission" : "Contact direct · 0% commission")}</small></div>
     `;
     bindOrderButtons(featuredCardArea);
   }
@@ -925,15 +984,28 @@
   }
 
   function applyLanguage(lang){
-    CURRENT_LANG = lang === "wo" ? "wo" : "fr";
+    CURRENT_LANG = (["fr","en","wo"].includes(lang)) ? lang : "fr";
     localStorage.setItem("digiy_lang", CURRENT_LANG);
-    document.documentElement.setAttribute("lang", CURRENT_LANG === "wo" ? "wo" : "fr");
+    document.documentElement.setAttribute("lang", CURRENT_LANG === "wo" ? "wo" : CURRENT_LANG);
+
+    if(CURRENT_LANG === "en"){
+      document.title = "DIGIY DRIVER AMBASSADOR — Driver showcase";
+      document.querySelector('meta[name="description"]')?.setAttribute("content", "DIGIY DRIVER AMBASSADOR — driver showcase with official DIGIYLYFE QR, direct WhatsApp contact, 0% commission and direct terrain route.");
+    }else{
+      document.title = "DIGIY DRIVER AMBASSADEUR — Vitrine chauffeur";
+      document.querySelector('meta[name="description"]')?.setAttribute("content", "DIGIY DRIVER AMBASSADEUR — vitrine chauffeur avec QR officiel DIGIYLYFE, contact WhatsApp direct, 0% commission et route directe terrain.");
+    }
+
     document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent = t(el.dataset.i18n);});
     qFilter?.setAttribute("placeholder", t("search_ph"));
     $("lang-fr")?.classList.toggle("active", CURRENT_LANG === "fr");
+    $("lang-en")?.classList.toggle("active", CURRENT_LANG === "en");
     $("lang-wo")?.classList.toggle("active", CURRENT_LANG === "wo");
+    const audioBtn = $("digiy-audio-driver");
+    if(audioBtn && !(window.speechSynthesis && speechSynthesis.speaking)) audioBtn.textContent = t("audio_button") || (CURRENT_LANG === "en" ? "🎧 Listen to DIGIY" : "🎧 Écouter DIGIY");
     refreshTopStats();
     render();
+    window.dispatchEvent(new CustomEvent("digiy-lang-change", { detail:{ lang: CURRENT_LANG } }));
   }
 
   [
@@ -950,7 +1022,7 @@
     try{
       const { data, error } = await sb.rpc("digiy_driver_public_gallery");
       if(error) throw error;
-      ALL = Array.isArray(data) ? data : [];
+      ALL = cleanDriverRows(data);
       rebuildZoneOptions(ALL); refreshTopStats();
       liveBadge.textContent = t("badge_public"); badgeTop.textContent = t("badge_public");
       render();
@@ -966,6 +1038,7 @@
   }
 
   $("lang-fr").addEventListener("click",()=>applyLanguage("fr"));
+  $("lang-en").addEventListener("click",()=>applyLanguage("en"));
   $("lang-wo").addEventListener("click",()=>applyLanguage("wo"));
   zoneFilter.addEventListener("change",render);
   availFilter.addEventListener("change",render);
@@ -980,23 +1053,43 @@
   const btn = document.getElementById("digiy-audio-driver");
   if(!btn || !("speechSynthesis" in window)) return;
 
-  function digiySpeakText(text){
-    return String(text || "")
-      .replace(/\bWave\b/g, "Wéïv")
-      .replace(/\bWouève\b/g, "Wéïv")
-      .replace(/\bWhatsApp\b/g, "Ouatsap")
-      .replace(/\bDIGIYLYFE\b/g, "Di-ji-laïf")
-      .replace(/\bRESA\b/g, "réservation")
-      .replace(/\bRÉSA\b/g, "réservation");
+  const TEXTS = {
+    fr: "Bienvenue dans DIGIY DRIVER. Ici, le chauffeur n'est pas perdu dans la masse. Il se présente proprement, avec sa photo, sa zone, son véhicule, son QR officiel DIGIYLYFE et son WhatsApp direct. Le client voit, scanne, contacte et demande son trajet directement. Zéro commission. La valeur du trajet reste dans la main du chauffeur. Discrétion, ponctualité, savoir-vivre. DIGIYLYFE.",
+    en: "Welcome to DIGIY DRIVER. Here, the driver is not lost in the crowd. The driver is presented cleanly, with a photo, area, vehicle, official DIGIYLYFE QR and direct WhatsApp contact. The client sees, scans, contacts and requests the ride directly. Zero commission. The value of the ride stays in the driver's hands. Discretion, punctuality and good manners. DIGIYLYFE.",
+    wo: "Bienvenue ci DIGIY DRIVER. Fii, chauffeur bi du réer ci mbooloo mi. Dafa am photo, zone, voiture, QR officiel DIGIYLYFE ak WhatsApp direct. Client bi gis, scan, jokkook, te laaj trajet bi directement. Zéro commission. Xalisu trajet bi des na ci loxou chauffeur bi."
+  };
+
+  const LABELS = {
+    fr: { play:"🎧 Écouter DIGIY", stop:"■ Arrêter", lang:"fr-FR" },
+    en: { play:"🎧 Listen to DIGIY", stop:"■ Stop", lang:"en-US" },
+    wo: { play:"🎧 Écouter DIGIY", stop:"■ Stop", lang:"fr-FR" }
+  };
+
+  function currentLang(){
+    const htmlLang = (document.documentElement.getAttribute("lang") || "fr").toLowerCase();
+    if(htmlLang.startsWith("en")) return "en";
+    if(htmlLang.startsWith("wo")) return "wo";
+    return "fr";
   }
 
-  const TEXTE = "Bienvenue dans DIGIY DRIVER. Ici, le chauffeur n'est pas perdu dans la masse. Il se présente proprement, avec sa photo, sa zone, son véhicule, son QR officiel DIGIYLYFE et son WhatsApp direct. Le client voit, scanne, contacte et demande son trajet directement. Zéro commission. La valeur du trajet reste dans la main du chauffeur. Discrétion, ponctualité, savoir-vivre. DIGIYLYFE.";
+  function digiySpeakText(text, lang){
+    let out = String(text || "")
+      .replace(/0\s*%/g, lang === "en" ? "zero percent" : "zéro pour cent")
+      .replace(/\bQR\b/g, "Q R")
+      .replace(/\bSMS\b/g, "S M S")
+      .replace(/\bWhatsApp\b/g, "Ouatsap")
+      .replace(/\bDIGIYLYFE\b/g, "Di-ji-laïf")
+      .replace(/\bDIGIY\b/g, "Di-ji");
+    return out;
+  }
+
   const synth = window.speechSynthesis;
   let playing = false;
 
   function resetButton(){
     playing = false;
-    btn.textContent = "🎧 Écouter DIGIY";
+    const lang = currentLang();
+    btn.textContent = (LABELS[lang] || LABELS.fr).play;
   }
 
   function stop(){
@@ -1005,25 +1098,32 @@
   }
 
   function play(){
+    const lang = currentLang();
+    const labels = LABELS[lang] || LABELS.fr;
     synth.cancel();
-    const utt = new SpeechSynthesisUtterance(digiySpeakText(TEXTE));
-    utt.lang = "fr-FR";
-    utt.rate = .86;
+    const utt = new SpeechSynthesisUtterance(digiySpeakText(TEXTS[lang] || TEXTS.fr, lang));
+    utt.lang = labels.lang;
+    utt.rate = lang === "en" ? .90 : .86;
     utt.pitch = 1.02;
     utt.onend = resetButton;
     utt.onerror = resetButton;
     synth.speak(utt);
     playing = true;
-    btn.textContent = "■ Arrêter";
+    btn.textContent = labels.stop;
   }
 
   btn.addEventListener("click",()=> playing ? stop() : play());
+  window.addEventListener("digiy-lang-change", stop);
   window.addEventListener("pagehide",stop);
+  resetButton();
 })();
 </script>
 
 <!-- DIGIY DRIVER AMBASSADEUR — QR officiel DIGIYLYFE ajouté — 20260619 -->
 </body>
 </html>
+
+
+
 
 

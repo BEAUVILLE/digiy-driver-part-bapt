@@ -8,7 +8,7 @@
   <meta name="description" content="Baptiste, chauffeur ambassadeur DIGIY DRIVER : fiche publique, trajets proposés, QR officiel DIGIYLYFE, contact direct et 0% commission." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://digiy-driver-part-bapt.digiylyfe.com/" />
-  <meta name="digiy-build" content="baptiste-public-card-shareable-20260729" />
+  <meta name="digiy-build" content="baptiste-public-card-shareable-20260729-v3" />
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://digiy-driver-part-bapt.digiylyfe.com/" />
   <meta property="og:title" content="Baptiste — Chauffeur ambassadeur DIGIY DRIVER" />
@@ -295,10 +295,6 @@
     .status-badge{padding:8px 11px;border-radius:999px;border:1px solid rgba(245,205,102,.24);background:rgba(245,205,102,.08);color:#ffe8ae;font-size:12px;font-weight:950;white-space:nowrap}
 
     .navRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-    .stat{border-radius:18px;border:1px solid var(--line2);background:rgba(255,255,255,.04);padding:13px}
-    .stat small{display:block;color:var(--muted);font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
-    .stat b{display:block;margin-top:7px;font-size:22px;color:#fff;font-weight:950}
 
     .featured-wrap{margin-top:14px;border-radius:24px;border:1px solid rgba(245,205,102,.18);background:rgba(245,205,102,.045);padding:14px}
     .featured-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -326,12 +322,6 @@
     .featured-qr img{width:112px;height:112px;border-radius:16px;background:#fff;padding:7px;display:block}
     .featured-qr small{font-size:11px;line-height:1.3;color:var(--muted);font-weight:900}
     .featured-empty{border-radius:20px;border:1px dashed rgba(255,255,255,.16);background:rgba(255,255,255,.035);padding:16px;color:var(--soft);font-weight:850;line-height:1.6}
-
-    .bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
-    .field label{display:block;margin-bottom:7px;font-size:12px;color:var(--muted);font-weight:950}
-    input,select{width:100%;padding:13px 13px;border-radius:16px;border:1px solid var(--line);outline:0;background:rgba(255,255,255,.055);color:var(--ink);font-size:14px;font-weight:900;font-family:inherit}
-    select option{color:#061018}
-    input::placeholder{color:rgba(226,232,240,.45)}
 
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
     .driver{
@@ -361,7 +351,6 @@
     .toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:25;display:none;max-width:92vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:999px;border:1px solid var(--line);background:rgba(5,11,18,.94);color:#fff;padding:10px 13px;font-size:13px;font-weight:950;box-shadow:0 14px 34px rgba(0,0,0,.35)}
 
     .audio-btn{position:fixed;right:18px;bottom:18px;z-index:22;border:1px solid rgba(245,205,102,.28);background:linear-gradient(135deg,var(--gold),var(--gold2));color:#061018;box-shadow:0 16px 36px rgba(245,205,102,.18);border-radius:999px;padding:13px 16px;font-size:14px;font-weight:950;font-family:inherit;cursor:pointer}
-
 
     /* ══ DIGIY DRIVER — Trajets proposés côté client ══ */
     .routesBlock{
@@ -447,8 +436,6 @@
       }
     }
 
-
-
     /* ===== MARQUE MÈRE DIGIYLYFE.COM ===== */
     .digiy-mother-link,
     .digiy-brand-banner{
@@ -505,6 +492,110 @@
       color:#fff7d4;
     }
 
+    /* ===== FORMULAIRE DE COURSE (comme sur Lamine) ===== */
+    .booking{
+      margin-top:16px;
+      border:1px solid rgba(245,205,102,.28);
+      border-radius:var(--radius);
+      background:
+        radial-gradient(520px 220px at 0 0,rgba(246,196,83,.18),transparent 64%),
+        linear-gradient(150deg,rgba(8,52,35,.96),rgba(4,20,14,.96));
+      padding:17px;
+    }
+    .booking h2{
+      margin:0 0 7px;
+      font-size:clamp(23px,6vw,36px);
+      line-height:1;
+      font-weight:1000;
+      letter-spacing:-.035em;
+      color:#fff4c7;
+    }
+    .booking>p{
+      margin:0;
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.45;
+      font-weight:850;
+    }
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    .full{grid-column:1/-1}
+    .booking label{
+      display:block;
+      margin:0 0 6px;
+      color:#fff3cf;
+      font-size:12px;
+      font-weight:1000;
+    }
+    .booking input,.booking select,.booking textarea{
+      width:100%;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.075);
+      color:var(--ink);
+      padding:12px 13px;
+      outline:none;
+      font-family:inherit;
+    }
+    .booking input,.booking select{min-height:48px}
+    .booking textarea{min-height:92px;resize:vertical}
+    .booking input:focus,.booking select:focus,.booking textarea:focus{
+      border-color:var(--gold);
+      box-shadow:0 0 0 4px rgba(246,196,83,.12);
+    }
+    .booking option{color:#111}
+    .send{
+      width:100%;
+      min-height:54px;
+      margin-top:12px;
+      border:0;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--green));
+      color:#06140f;
+      font-weight:1000;
+      cursor:pointer;
+      font-family:inherit;
+    }
+    .notice{
+      margin:11px 0 0;
+      padding:11px 12px;
+      border-radius:17px;
+      border:1px dashed rgba(246,196,83,.38);
+      background:rgba(246,196,83,.07);
+      color:rgba(255,250,240,.80);
+      font-size:12px;
+      line-height:1.42;
+      font-weight:900;
+    }
+
+    .contact-direct-card{
+      margin-top:14px;
+      padding:16px;
+      border-radius:22px;
+      border:1px solid rgba(59,130,246,.35);
+      background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(255,255,255,.04));
+      text-align:center;
+    }
+    .contact-direct-card strong{
+      display:block;
+      color:#fff4c7;
+      font-size:18px;
+    }
+    .contact-direct-card p{
+      color:var(--soft);
+      font-size:13px;
+      line-height:1.5;
+      font-weight:850;
+      max-width:560px;
+      margin:8px auto 0;
+    }
+    .contact-direct-card .btn{
+      margin-top:12px;
+    }
 
     @media(max-width:980px){
       .hero-grid{grid-template-columns:1fr}
@@ -513,10 +604,12 @@
       .featured-qr{grid-column:1/-1;border-left:0;border-top:1px solid var(--line2);padding:12px 0 0;display:flex;justify-content:flex-start;text-align:left}
     }
     @media(max-width:860px){
-      .stats,.bar,.grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
       .featured-card{grid-template-columns:1fr}
       .featured-photo{min-height:240px}
       .featured-qr{justify-content:space-between}
+      .form-grid{grid-template-columns:1fr}
+      .full{grid-column:auto}
     }
     @media(max-width:720px){
       .page{padding-top:64px}
@@ -535,7 +628,7 @@
       .audio-btn{left:14px;right:14px;bottom:14px;width:calc(100% - 28px)}
     }
 
-    /* ===== CARTE DE VISITE BAPTISTE — 9:16, CLIQUABLE ET PARTAGEABLE ===== */
+    /* ===== CARTE DE VISITE BAPTISTE — 9:16 ===== */
     .business-card-section{
       margin-top:14px;
       border-radius:28px;
@@ -637,7 +730,6 @@
       .business-card-click{max-width:420px;margin:0 auto}
       .business-card-actions .btn{width:100%}
     }
-
   </style>
 </head>
 
@@ -702,7 +794,8 @@
         </div>
 
         <aside class="photo-card" aria-label="Photo chauffeur premium">
-          <img class="photo" id="heroPhoto" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=82" alt="Véhicule élégant sur la route, image de service chauffeur premium" loading="eager" />
+          <!-- Remplace cette URL par une vraie photo de Baptiste -->
+          <img class="photo" id="heroPhoto" src="photo-baptiste.jpg" alt="Photo de Baptiste, chauffeur ambassadeur DIGIY DRIVER" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=82'" />
           <div class="photo-content">
             <div>
               <div class="photo-title" data-i18n="photo_title">Baptiste, présenté clairement avant le premier contact.</div>
@@ -763,6 +856,60 @@
       </div>
     </section>
 
+
+    <!-- ===== AJOUT : FORMULAIRE DE COURSE (comme sur Lamine) ===== -->
+    <section class="booking" id="preparer-course">
+      <h2>Préparer votre message pour Baptiste</h2>
+      <p>Ces informations ne sont pas envoyées à DIGIY. Le bouton prépare simplement un message WhatsApp direct à Baptiste.</p>
+
+      <form id="tripForm">
+        <div class="form-grid">
+          <div>
+            <label for="date">Date souhaitée</label>
+            <input id="date" type="date">
+          </div>
+          <div>
+            <label for="time">Heure souhaitée</label>
+            <input id="time" type="time">
+          </div>
+          <div>
+            <label for="from">Lieu de départ</label>
+            <input id="from" type="text" placeholder="Ex. Saly">
+          </div>
+          <div>
+            <label for="to">Destination</label>
+            <input id="to" type="text" placeholder="Ex. AIBD">
+          </div>
+          <div>
+            <label for="passengers">Nombre de passagers</label>
+            <input id="passengers" type="number" min="1" max="20" placeholder="2">
+          </div>
+          <div>
+            <label for="bags">Bagages</label>
+            <input id="bags" type="text" placeholder="Ex. 2 valises">
+          </div>
+          <div class="full">
+            <label for="note">Précision utile</label>
+            <textarea id="note" placeholder="Vol, arrêt prévu, siège enfant, attente…"></textarea>
+          </div>
+        </div>
+        <button class="send" type="submit">Ouvrir WhatsApp avec mon trajet →</button>
+      </form>
+
+      <p class="notice">
+        DIGIY ne reçoit ni la demande ni le paiement. Baptiste confirme directement la disponibilité,
+        le trajet et le tarif avec le client.
+      </p>
+    </section>
+
+
+    <!-- ===== CONTACT DIRECT (conservé) ===== -->
+    <div class="contact-direct-card">
+      <strong>📞 Autre moyen de contacter Baptiste</strong>
+      <p>Baptiste n’a pas de numéro public sur cette fiche. Pour le joindre, ouvrez sa fiche officielle et utilisez le formulaire de contact ou ses coordonnées WhatsApp.</p>
+      <a class="btn btn-main" href="https://digiy-driver-part-bapt.digiylyfe.com/" target="_blank" rel="noopener">🚗 Ouvrir la fiche officielle de Baptiste</a>
+    </div>
+
     <section class="card">
       <div class="status">
         <div>
@@ -780,13 +927,6 @@
         <a class="btn btn-green" id="joinBtnTop" href="#" data-i18n="nav_recruit">🦅 Rejoindre la sélection</a>
       </div>
 
-      <div class="stats" aria-label="Statistiques galerie">
-        <div class="stat"><small data-i18n="panel_count_k">Chauffeurs visibles</small><b id="statTotal">—</b></div>
-        <div class="stat"><small data-i18n="panel_online_k">Contact direct</small><b id="statOnline">—</b></div>
-        <div class="stat"><small data-i18n="panel_zone_k">Zones couvertes</small><b id="statZones">—</b></div>
-        <div class="stat"><small data-i18n="panel_public_k">Visibilité</small><b id="liveBadge">—</b></div>
-      </div>
-
       <div class="featured-wrap">
         <div class="featured-head">
           <div>
@@ -797,27 +937,9 @@
         </div>
         <div id="featuredCardArea" class="featured-empty" data-i18n="featured_loading">Chargement de la carte chauffeur…</div>
       </div>
-
-      <div class="bar">
-        <div class="field">
-          <label data-i18n="label_zone">📍 Zone recherchée</label>
-          <select id="zoneFilter"><option value="" data-i18n="zone_all">Toutes</option></select>
-        </div>
-        <div class="field">
-          <label data-i18n="label_search">🔎 Nom, ville ou voiture</label>
-          <input id="qFilter" placeholder="Nom, ville ou voiture…" />
-        </div>
-        <div class="field">
-          <label data-i18n="label_avail">📞 Contact</label>
-          <select id="availFilter">
-            <option value="all" selected data-i18n="avail_all">Tous les profils</option>
-            <option value="direct" data-i18n="avail_online">WhatsApp direct</option>
-            <option value="contact" data-i18n="avail_offline">À contacter</option>
-          </select>
-        </div>
-      </div>
     </section>
 
+    <!-- ===== GALERIE ALLÉGÉE (SANS FILTRES) ===== -->
     <section class="grid" id="drivers" aria-label="Liste des chauffeurs"></section>
 
     <section class="card footCta">
@@ -864,11 +986,9 @@
       section_title:"Baptiste en premier, la galerie en complément", section_sub:"Cette fiche garde Baptiste comme profil principal. La galerie permet ensuite de découvrir d’autres chauffeurs sans mélanger leurs liens.",
       badge_loading:"Chargement…", badge_public:"Galerie publique", badge_fallback:"Mode vitrine",
       nav_site:"← DIGIYLYFE.COM", nav_gallery:"🚗 Autres chauffeurs", nav_public_card:"🎴 Carte chauffeur", nav_order:"📲 Demander un chauffeur", nav_recruit:"🦅 Rejoindre la sélection",
-      panel_count_k:"Chauffeurs visibles", panel_online_k:"Contact direct", panel_zone_k:"Zones couvertes", panel_public_k:"Visibilité",
       featured_title:"Baptiste en vitrine", featured_sub:"La carte principale reste celle de Baptiste : photo, informations disponibles, trajets, contact direct et QR officiel.", featured_badge:"Profil principal", featured_loading:"Chargement de la carte chauffeur…",
       featured_empty:"Aucun chauffeur visible pour le moment. La vitrine reste prête avec QR et contact direct.", featured_profile:"Voir la fiche", featured_whatsapp:"WhatsApp", featured_order:"Demander ce chauffeur", featured_label:"Baptiste · profil principal",
-      label_zone:"📍 Zone recherchée", zone_all:"Toutes", label_search:"🔎 Nom, ville ou voiture", search_ph:"Nom, ville ou voiture…", label_avail:"📞 Contact", avail_all:"Tous les profils", avail_online:"WhatsApp direct", avail_offline:"À contacter",
-      count_drivers:n=>`${n} chauffeur(s)`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone(s)`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
+      count_drivers:n=>`${n} chauffeur(s)`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone(s)`,
       empty_title:"Aucun chauffeur trouvé", empty_tag_1:"Change les filtres", empty_tag_2:"Ou passe par WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander un chauffeur",
       driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service discret, ponctuel et direct.", driver_tagline:"Service discret au savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Voir la fiche", scan_label:"QR officiel DIGIYLYFE",
       cta_driver_title:"Vous êtes chauffeur ambassadeur ?", cta_driver_sub:"Rejoins DIGIY DRIVER et montre ton service avec une fiche propre, un QR officiel et un contact direct.", cta_become_driver:"Rejoindre la sélection", cta_order_ride:"Demander un chauffeur", cta_whatsapp:"WhatsApp support",
@@ -894,18 +1014,15 @@
       section_title:"Seetal chauffeur bi gën", section_sub:"Filtre ci zone, dëkk walla voiture. Ba noppi jokkook profil bi nga gëm.",
       badge_loading:"Di yük…", badge_public:"Galerie publique", badge_fallback:"Mode vitrine",
       nav_site:"← DIGIYLYFE.COM", nav_gallery:"🚗 Sunu chauffeurs", nav_public_card:"🎴 Carte chauffeur", nav_order:"📲 Demander chauffeur", nav_recruit:"🦅 Duggal ci sélection bi",
-      panel_count_k:"Chauffeur yi", panel_online_k:"Contact direct", panel_zone_k:"Zone yi", panel_public_k:"Visibilité",
       featured_title:"Carte chauffeur ci vitrine", featured_sub:"Fiche bu rafet : photo, zone, voiture, WhatsApp ak QR officiel. Client bi xam lépp bu gaaw.", featured_badge:"Choix direct", featured_loading:"Di yük carte chauffeur bi…",
       featured_empty:"Amul chauffeur bu ñuy won léegi. Vitrine bi am na QR ak contact direct.", featured_profile:"Xool fiche bi", featured_whatsapp:"WhatsApp", featured_order:"Demander chauffeur bii", featured_label:"Chauffeur ci kanam",
-      label_zone:"📍 Zone bi", zone_all:"Yépp", label_search:"🔎 Tur, dëkk walla voiture", search_ph:"Tur, dëkk walla voiture…", label_avail:"📞 Contact", avail_all:"Profils yépp", avail_online:"WhatsApp direct", avail_offline:"À contacter",
-      count_drivers:n=>`${n} chauffeur`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
+      count_drivers:n=>`${n} chauffeur`, online_now:n=>`${n} WhatsApp direct`, zones_live:n=>`${n} zone`,
       empty_title:"Amul chauffeur bu ñu gis", empty_tag_1:"Soppi filtre yi", empty_tag_2:"Walla WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Demander chauffeur",
       driver_default_name:"Chauffeur Ambassadeur", driver_desc_default:"Profil public DIGIY DRIVER. Service bu teey, ponctuel ak direct.", driver_tagline:"Service discret ak savoir-vivre", tag_online:"📞 WhatsApp direct", tag_offline:"🕊️ À contacter", pill_public:"Sélectionné", btn_whatsapp:"WhatsApp", btn_profile:"Xool fiche bi", scan_label:"QR officiel DIGIYLYFE",
       cta_driver_title:"Yow, yaa di chauffeur ambassadeur ?", cta_driver_sub:"Duggal ci DIGIY DRIVER ak fiche bu rafet, QR officiel ak contact direct.", cta_become_driver:"Duggal ci sélection bi", cta_order_ride:"Demander chauffeur", cta_whatsapp:"WhatsApp support",
       fallback_title:"Vitrine bi pare na — connexion galerie à vérifier", fallback_tag_1:"Source publique bi tontuwul", fallback_tag_2:"QR ak liens yi baax nañu", toast_fallback:"Vitrine ci mode présentation",
       audio_button:"🎧 Écouter DIGIY"
-    }
-  ,
+    },
     en: {
       eyebrow:"DIGIY DRIVER AMBASSADOR",
       brand_title:"Baptiste — DIGIY DRIVER ambassador driver.",
@@ -925,11 +1042,9 @@
       section_title:"Baptiste first, gallery second", section_sub:"This page keeps Baptiste as the main profile. The gallery then shows other drivers without mixing their links.",
       badge_loading:"Loading…", badge_public:"Public gallery", badge_fallback:"Showcase mode",
       nav_site:"← DIGIYLYFE.COM", nav_gallery:"🚗 Other drivers", nav_public_card:"🎴 Driver card", nav_order:"📲 Request a driver", nav_recruit:"🦅 Join the selection",
-      panel_count_k:"Visible drivers", panel_online_k:"Direct contact", panel_zone_k:"Covered areas", panel_public_k:"Visibility",
       featured_title:"Baptiste in the showcase", featured_sub:"The main card remains Baptiste’s: photo, available information, rides, direct contact and official QR.", featured_badge:"Main profile", featured_loading:"Loading driver card…",
       featured_empty:"No driver is visible for now. The showcase remains ready with QR and direct contact.", featured_profile:"View profile", featured_whatsapp:"WhatsApp", featured_order:"Request this driver", featured_label:"Baptiste · main profile",
-      label_zone:"📍 Search area", zone_all:"All", label_search:"🔎 Name, city or car", search_ph:"Name, city or car…", label_avail:"📞 Contact", avail_all:"All profiles", avail_online:"Direct WhatsApp", avail_offline:"To contact",
-      count_drivers:n=>`${n} driver(s)`, online_now:n=>`${n} direct WhatsApp`, zones_live:n=>`${n} area(s)`, stat_total:n=>`${n}`, stat_online:n=>`${n}`, stat_zones:n=>`${n}`,
+      count_drivers:n=>`${n} driver(s)`, online_now:n=>`${n} direct WhatsApp`, zones_live:n=>`${n} area(s)`,
       empty_title:"No driver found", empty_tag_1:"Change filters", empty_tag_2:"Or use WhatsApp", btn_support_whatsapp:"WhatsApp support", btn_order_ride:"Request a driver",
       driver_default_name:"Ambassador Driver", driver_desc_default:"Public DIGIY DRIVER profile. Discreet, punctual and direct service.", driver_tagline:"Discreet service with good manners", tag_online:"📞 Direct WhatsApp", tag_offline:"🕊️ To contact", pill_public:"Selected", btn_whatsapp:"WhatsApp", btn_profile:"View profile", scan_label:"Official DIGIYLYFE QR",
       cta_driver_title:"Are you an ambassador driver?", cta_driver_sub:"Join DIGIY DRIVER and show your service with a clean profile, an official QR and direct contact.", cta_become_driver:"Join the selection", cta_order_ride:"Request a driver", cta_whatsapp:"WhatsApp support",
@@ -947,9 +1062,6 @@
   const FEATURED_PUBLIC_CARD_URL = "https://digiy-driver-part-bapt.digiylyfe.com/";
   const DEFAULT_DRIVER_PHOTO = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=82";
 
-  // Profil garanti : cette page appartient à Baptiste.
-  // Les données publiques Supabase peuvent enrichir photo, zone, WhatsApp et trajets,
-  // mais la fiche ne doit jamais devenir celle d'un autre chauffeur.
   const BAPTISTE_DRIVER = Object.freeze({
     name: "Baptiste",
     slug: "baptiste",
@@ -987,9 +1099,9 @@
   let searchTimer = null;
 
   const $ = (id) => document.getElementById(id);
-  const driversEl = $("drivers"), zoneFilter = $("zoneFilter"), qFilter = $("qFilter"), availFilter = $("availFilter");
+  const driversEl = $("drivers");
   const countPill = $("countPill"), onlinePill = $("onlinePill"), liveBadge = $("liveBadge"), badgeTop = $("badgeTop"), toastEl = $("toast");
-  const statTotal = $("statTotal"), statOnline = $("statOnline"), statZones = $("statZones"), featuredCardArea = $("featuredCardArea");
+  const featuredCardArea = $("featuredCardArea");
 
   function t(key,...args){
     const pack = DIGIY_LANG[CURRENT_LANG] || DIGIY_LANG.fr;
@@ -1001,15 +1113,8 @@
   function isSensitiveSlug(value){return /\d{7,}/.test(String(value || "").trim().toLowerCase());}
   function normalizeText(v){return String(v || "").trim();}
 
-  // DIGIY anti-404 terrain : Babacar / BABACARD retiré de cette vitrine.
-  // La galerie publique peut encore renvoyer l'ancien profil depuis Supabase ;
-  // on filtre avant toute statistique, carte mise en avant ou bouton.
   function isBlockedDriverProfile(d){
-    const hay = [
-      d?.name, d?.title, d?.display_name, d?.slug, d?.card_public_url,
-      d?.public_url, d?.profile_url, d?.url, d?.description, d?.city, d?.zone
-    ].join(" " ).toLowerCase();
-
+    const hay = [d?.name, d?.title, d?.display_name, d?.slug, d?.card_public_url, d?.public_url, d?.profile_url, d?.url, d?.description, d?.city, d?.zone].join(" ").toLowerCase();
     return /babacar|baba\s*card|babacard/.test(hay);
   }
 
@@ -1068,9 +1173,7 @@
     return u.toString();
   }
   function photoForDriver(d){return d?.photo_url || d?.cover_url || d?.avatar_url || d?.image_url || DEFAULT_DRIVER_PHOTO;}
-  function publicUrlForDriver(d){return profileUrlForDriver(d) || commanderUrlForDriver(d);}
 
-  function getZoneCount(items){return new Set(items.map(d=>normalizeText(d.zone)).filter(Boolean)).size;}
   function getDirectCount(items){return items.filter(d=>!!normPhone(d.whatsapp)).length;}
   function sortDrivers(rows){return [...rows].sort((a,b)=>{const ar=Number(a.rating||0), br=Number(b.rating||0); if(br!==ar) return br-ar; return String(a.name||"").localeCompare(String(b.name||""),"fr",{sensitivity:"base"});});}
 
@@ -1089,29 +1192,14 @@
     });
   }
 
-  function rebuildZoneOptions(items){
-    const current = zoneFilter.value || "";
-    const zones = Array.from(new Set(items.map(d=>normalizeText(d.zone)).filter(Boolean))).sort((a,b)=>a.localeCompare(b,"fr",{sensitivity:"base"}));
-    zoneFilter.innerHTML = `<option value="">${esc(t("zone_all"))}</option>` + zones.map(z=>`<option value="${esc(z)}">${esc(z)}</option>`).join("");
-    if(zones.includes(current)) zoneFilter.value = current;
-  }
   function refreshTopStats(){
     countPill.textContent = t("count_drivers", ALL.length);
     onlinePill.textContent = t("online_now", getDirectCount(ALL));
-    statTotal.textContent = t("stat_total", ALL.length);
-    statOnline.textContent = t("stat_online", getDirectCount(ALL));
-    statZones.textContent = t("stat_zones", getZoneCount(ALL));
   }
-  function passes(d){
-    const z=(zoneFilter.value||"").trim(), q=(qFilter.value||"").trim().toLowerCase(), a=availFilter.value||"all", hasWhatsapp=!!normPhone(d.whatsapp);
-    if(z && String(d.zone||"")!==z) return false;
-    if(a==="direct" && !hasWhatsapp) return false;
-    if(a==="contact" && hasWhatsapp) return false;
-    if(q){const hay=[d.name,d.city,d.zone,d.car,d.vehicle_label,d.description].join(" ").toLowerCase(); if(!hay.includes(q)) return false;}
-    return true;
+  
+  function getFilteredItems(){
+    return sortDrivers(cleanDriverRows(ALL));
   }
-  function getFilteredItems(){return sortDrivers(cleanDriverRows(ALL).filter(passes));}
-
 
   function moneyFcfa(v){
     const n = Number(v || 0);
@@ -1119,94 +1207,32 @@
   }
 
   function readPublicRoutesFromStorage(){
-    const keys = [
-      "DIGIY_DRIVER_PRO_PUBLIC_ROUTES",
-      "DIGIY_DRIVER_PRO_TARIFS",
-      "DIGIY_DRIVER_PRO_PRICES",
-      "DIGIY_DRIVER_PUBLIC_ROUTES",
-      "DIGIY_DRIVER_TARIFS",
-      "DIGIY_DRIVER_PRICES"
-    ];
+    const keys = ["DIGIY_DRIVER_PRO_PUBLIC_ROUTES","DIGIY_DRIVER_PRO_TARIFS","DIGIY_DRIVER_PRO_PRICES","DIGIY_DRIVER_PUBLIC_ROUTES","DIGIY_DRIVER_TARIFS","DIGIY_DRIVER_PRICES"];
     for(const key of keys){
-      try{
-        const rows = JSON.parse(localStorage.getItem(key) || "[]");
-        if(Array.isArray(rows) && rows.length) return rows;
-      }catch(_){}
+      try{ const rows = JSON.parse(localStorage.getItem(key) || "[]"); if(Array.isArray(rows) && rows.length) return rows; }catch(_){}
     }
-    try{
-      const snap = JSON.parse(localStorage.getItem("DIGIY_DRIVER_PRO_SYNC_SNAPSHOT_V1") || localStorage.getItem("DIGIY_DRIVER_SYNC_SNAPSHOT_V1") || "{}");
-      const rows = snap.publicRoutes || snap.tarifs || snap.summary?.tarifs || [];
-      if(Array.isArray(rows) && rows.length) return rows;
-    }catch(_){}
+    try{ const snap = JSON.parse(localStorage.getItem("DIGIY_DRIVER_PRO_SYNC_SNAPSHOT_V1") || localStorage.getItem("DIGIY_DRIVER_SYNC_SNAPSHOT_V1") || "{}"); const rows = snap.publicRoutes || snap.tarifs || snap.summary?.tarifs || []; if(Array.isArray(rows) && rows.length) return rows; }catch(_){}
     return [];
   }
 
   function normalizeRouteRows(rows){
-    return (Array.isArray(rows) ? rows : [])
-      .map(r => ({
-        label: normalizeText(r.label || r.route_label || r.name || r.title || ""),
-        amount: Number(r.amount || r.price_fcfa || r.price || r.tarif || 0) || 0,
-        note: normalizeText(r.note || r.description || "")
-      }))
-      .filter(r => r.label && r.amount > 0);
+    return (Array.isArray(rows) ? rows : []).map(r => ({ label: normalizeText(r.label || r.route_label || r.name || r.title || ""), amount: Number(r.amount || r.price_fcfa || r.price || r.tarif || 0) || 0, note: normalizeText(r.note || r.description || "") })).filter(r => r.label && r.amount > 0);
   }
 
   function routesForDriver(d){
-    const direct =
-      d?.public_routes ||
-      d?.routes ||
-      d?.proposed_routes ||
-      d?.tarifs ||
-      d?.prices ||
-      d?.fares ||
-      d?.driver_routes ||
-      [];
-
+    const direct = d?.public_routes || d?.routes || d?.proposed_routes || d?.tarifs || d?.prices || d?.fares || d?.driver_routes || [];
     let rows = normalizeRouteRows(direct);
-
-    /*
-      Fallback utile pour test téléphone :
-      l'atelier PRO écrit parfois dans localStorage avant que Supabase soit ouvert.
-      Sur la vitrine publique réelle, l'idéal est que Supabase expose ces mêmes lignes.
-    */
-    if(!rows.length && isBaptisteDriver(d)){
-      rows = normalizeRouteRows(readPublicRoutesFromStorage());
-    }
-
+    if(!rows.length && isBaptisteDriver(d)){ rows = normalizeRouteRows(readPublicRoutesFromStorage()); }
     return rows.slice(0, 10);
   }
 
   function routeSectionHTML(d){
     const rows = routesForDriver(d);
     if(!rows.length) return "";
-
     const title = CURRENT_LANG === "en" ? "🚗 Suggested rides" : (CURRENT_LANG === "wo" ? "🚗 Trajet yi ñuy joxe" : "🚗 Trajets proposés");
-    const lead = CURRENT_LANG === "en"
-      ? "Usual rides, airport transfers, long distances and driver availability. Indicative prices to confirm directly with the driver."
-      : (CURRENT_LANG === "wo"
-        ? "Trajets yu bari, transfert aéroport, yoon yu gudd ak mise à disposition. Prix yi war nañu leen confirmer directement ak chauffeur bi."
-        : "Trajets habituels, transferts aéroport, longues distances et mise à disposition. Prix indicatifs à confirmer directement avec le chauffeur.");
-    const confirm = CURRENT_LANG === "en"
-      ? "📞 Direct confirmation on WhatsApp depending on time, luggage, waiting or detour."
-      : (CURRENT_LANG === "wo"
-        ? "📞 Confirmation directe ci WhatsApp selon waxtu, bagage, attente walla détour."
-        : "📞 Confirmation directe sur WhatsApp selon l’heure, les bagages, l’attente ou le détour.");
-
-    return `
-      <div class="routesBlock">
-        <div class="routesBlockTitle">${esc(title)}</div>
-        <div class="routesBlockLead">${esc(lead)}</div>
-        <div class="routesList">
-          ${rows.map(r => `
-            <div class="routeLine">
-              <div class="routeLineName">${esc(r.label)}</div>
-              <div class="routeLineAmount">${esc(moneyFcfa(r.amount))}</div>
-            </div>
-          `).join("")}
-        </div>
-        <div class="routeConfirm">${esc(confirm)}</div>
-      </div>
-    `;
+    const lead = CURRENT_LANG === "en" ? "Usual rides, airport transfers, long distances and driver availability. Indicative prices to confirm directly with the driver." : (CURRENT_LANG === "wo" ? "Trajets yu bari, transfert aéroport, yoon yu gudd ak mise à disposition. Prix yi war nañu leen confirmer directement ak chauffeur bi." : "Trajets habituels, transferts aéroport, longues distances et mise à disposition. Prix indicatifs à confirmer directement avec le chauffeur.");
+    const confirm = CURRENT_LANG === "en" ? "📞 Direct confirmation on WhatsApp depending on time, luggage, waiting or detour." : (CURRENT_LANG === "wo" ? "📞 Confirmation directe ci WhatsApp selon waxtu, bagage, attente walla détour." : "📞 Confirmation directe sur WhatsApp selon l’heure, les bagages, l’attente ou le détour.");
+    return `<div class="routesBlock"><div class="routesBlockTitle">${esc(title)}</div><div class="routesBlockLead">${esc(lead)}</div><div class="routesList">${rows.map(r => `<div class="routeLine"><div class="routeLineName">${esc(r.label)}</div><div class="routeLineAmount">${esc(moneyFcfa(r.amount))}</div></div>`).join("")}</div><div class="routeConfirm">${esc(confirm)}</div></div>`;
   }
 
   function renderFeaturedCard(items){
@@ -1215,7 +1241,7 @@
     const rating=(d.rating!=null && d.rating!=="") ? Number(d.rating) : null;
     const wa=normPhone(d.whatsapp), profile=FEATURED_PUBLIC_CARD_URL, order=commanderUrlForDriver(d), photo=photoForDriver(d), qr=qrUrl(profile,180);
     const heroPhoto = $("heroPhoto");
-    if(heroPhoto && photo) heroPhoto.src = photo;
+    if(heroPhoto && photo && !photo.includes("unsplash")) heroPhoto.src = photo;
     featuredCardArea.className = "featured-card";
     featuredCardArea.innerHTML = `
       <div class="featured-photo"><img src="${esc(photo)}" alt="Photo de ${esc(name)}" loading="lazy" onerror="this.src='${esc(DEFAULT_DRIVER_PHOTO)}'"><span>${esc(initials(name))}</span></div>
@@ -1247,44 +1273,14 @@
     countPill.textContent = t("count_drivers", items.length);
     renderFeaturedCard(items);
     if(!items.length){
-      driversEl.innerHTML = `
-        <article class="driver" style="grid-column:1/-1">
-          <div class="name">${esc(t("empty_title"))}</div>
-          <div class="meta"><span class="tag">${esc(t("empty_tag_1"))}</span><span class="tag">${esc(t("empty_tag_2"))}</span></div>
-          <div class="actions"><a class="btn btn-main" href="https://wa.me/221771342889" rel="noopener">${esc(t("btn_support_whatsapp"))}</a><a class="btn btn-ghost" href="${esc(hrefFor(ORDER_RIDE_URL,true))}" rel="noopener">${esc(t("btn_order_ride"))}</a></div>
-        </article>`;
+      driversEl.innerHTML = `<article class="driver" style="grid-column:1/-1"><div class="name">${esc(t("empty_title"))}</div><div class="meta"><span class="tag">${esc(t("empty_tag_1"))}</span><span class="tag">${esc(t("empty_tag_2"))}</span></div><div class="actions"><a class="btn btn-main" href="https://wa.me/221771342889" rel="noopener">${esc(t("btn_support_whatsapp"))}</a><a class="btn btn-ghost" href="${esc(hrefFor(ORDER_RIDE_URL,true))}" rel="noopener">${esc(t("btn_order_ride"))}</a></div></article>`;
       return;
     }
     driversEl.innerHTML = items.map(d=>{
       const name=d.name || t("driver_default_name"), city=esc(d.city||""), zone=esc(d.zone||""), car=esc(d.car||d.vehicle_label||""), desc=esc(d.description || t("driver_desc_default"));
       const wa=normPhone(d.whatsapp), rating=(d.rating!=null && d.rating!=="") ? Number(d.rating) : null, profile=profileUrlForDriver(d), order=commanderUrlForDriver(d), photo=photoForDriver(d), qrTarget=profile || order, qr=qrUrl(qrTarget,140);
       const payload=esc(JSON.stringify({name:d.name||"",whatsapp:wa||"",slug:d.slug||""}));
-      return `
-        <article class="driver">
-          <div class="driver-top">
-            <div class="thumb"><img src="${esc(photo)}" alt="Photo de ${esc(name)}" loading="lazy" onerror="this.src='${esc(DEFAULT_DRIVER_PHOTO)}'"><span class="mono">${esc(initials(name))}</span></div>
-            <div>
-              <div class="driver-headline"><div><div class="name">${esc(name)}</div><div class="role">${esc(t("driver_tagline"))}</div></div><div class="side-badge">${esc(t("pill_public"))}</div></div>
-              <div class="meta">
-                ${city?`<span class="tag">🏙️ ${city}</span>`:""}
-                ${zone?`<span class="tag">📍 ${zone}</span>`:""}
-                ${car?`<span class="tag">🚗 ${car}</span>`:""}
-                ${wa?`<span class="tag green">${esc(t("tag_online"))}</span>`:`<span class="tag off">${esc(t("tag_offline"))}</span>`}
-                ${(rating && !Number.isNaN(rating)) ? `<span class="tag gold">⭐ ${rating.toFixed(1)}</span>`:""}
-              </div>
-            </div>
-          </div>
-          <div class="desc">${desc}</div>
-          ${routeSectionHTML(d)}
-          <div class="card-bottom">
-            <div class="actions">
-              ${wa?`<a class="btn btn-main" href="https://wa.me/${wa}" target="_blank" rel="noopener">${esc(t("btn_whatsapp"))}</a>`:`<button class="btn btn-main" disabled>${esc(t("btn_whatsapp"))}</button>`}
-              ${profile?`<a class="btn btn-ghost" href="${esc(profile)}" rel="noopener">${esc(t("btn_profile"))}</a>`:""}
-              <a class="btn btn-blue js-order-btn" href="${esc(order)}" rel="noopener" data-driver='${payload}'>${esc(t("btn_order_ride"))}</a>
-            </div>
-            <div class="mini-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><span>${esc(t("scan_label"))}<br>0% commission</span></div>
-          </div>
-        </article>`;
+      return `<article class="driver"><div class="driver-top"><div class="thumb"><img src="${esc(photo)}" alt="Photo de ${esc(name)}" loading="lazy" onerror="this.src='${esc(DEFAULT_DRIVER_PHOTO)}'"><span class="mono">${esc(initials(name))}</span></div><div><div class="driver-headline"><div><div class="name">${esc(name)}</div><div class="role">${esc(t("driver_tagline"))}</div></div><div class="side-badge">${esc(t("pill_public"))}</div></div><div class="meta">${city?`<span class="tag">🏙️ ${city}</span>`:""}${zone?`<span class="tag">📍 ${zone}</span>`:""}${car?`<span class="tag">🚗 ${car}</span>`:""}${wa?`<span class="tag green">${esc(t("tag_online"))}</span>`:`<span class="tag off">${esc(t("tag_offline"))}</span>`}${(rating && !Number.isNaN(rating)) ? `<span class="tag gold">⭐ ${rating.toFixed(1)}</span>`:""}</div></div></div><div class="desc">${desc}</div>${routeSectionHTML(d)}<div class="card-bottom"><div class="actions">${wa?`<a class="btn btn-main" href="https://wa.me/${wa}" target="_blank" rel="noopener">${esc(t("btn_whatsapp"))}</a>`:`<button class="btn btn-main" disabled>${esc(t("btn_whatsapp"))}</button>`}${profile?`<a class="btn btn-ghost" href="${esc(profile)}" rel="noopener">${esc(t("btn_profile"))}</a>`:""}<a class="btn btn-blue js-order-btn" href="${esc(order)}" rel="noopener" data-driver='${payload}'>${esc(t("btn_order_ride"))}</a></div><div class="mini-qr"><img src="${esc(qr)}" alt="QR officiel DIGIYLYFE de ${esc(name)}" loading="lazy"><span>${esc(t("scan_label"))}<br>0% commission</span></div></div></article>`;
     }).join("");
     bindOrderButtons(driversEl);
   }
@@ -1293,17 +1289,8 @@
     CURRENT_LANG = (["fr","en","wo"].includes(lang)) ? lang : "fr";
     localStorage.setItem("digiy_lang", CURRENT_LANG);
     document.documentElement.setAttribute("lang", CURRENT_LANG === "wo" ? "wo" : CURRENT_LANG);
-
-    if(CURRENT_LANG === "en"){
-      document.title = "Baptiste — DIGIY DRIVER ambassador driver | Direct contact";
-      document.querySelector('meta[name="description"]')?.setAttribute("content", "Baptiste, DIGIY DRIVER ambassador driver: public profile, suggested rides, official DIGIYLYFE QR, direct contact and 0% commission.");
-    }else{
-      document.title = "Baptiste — Chauffeur ambassadeur DIGIY DRIVER | Contact direct";
-      document.querySelector('meta[name="description"]')?.setAttribute("content", "Baptiste, chauffeur ambassadeur DIGIY DRIVER : fiche publique, trajets proposés, QR officiel DIGIYLYFE, contact direct et 0% commission.");
-    }
-
+    if(CURRENT_LANG === "en"){ document.title = "Baptiste — DIGIY DRIVER ambassador driver | Direct contact"; document.querySelector('meta[name="description"]')?.setAttribute("content", "Baptiste, DIGIY DRIVER ambassador driver: public profile, suggested rides, official DIGIYLYFE QR, direct contact and 0% commission."); }else{ document.title = "Baptiste — Chauffeur ambassadeur DIGIY DRIVER | Contact direct"; document.querySelector('meta[name="description"]')?.setAttribute("content", "Baptiste, chauffeur ambassadeur DIGIY DRIVER : fiche publique, trajets proposés, QR officiel DIGIYLYFE, contact direct et 0% commission."); }
     document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent = t(el.dataset.i18n);});
-    qFilter?.setAttribute("placeholder", t("search_ph"));
     $("lang-fr")?.classList.toggle("active", CURRENT_LANG === "fr");
     $("lang-en")?.classList.toggle("active", CURRENT_LANG === "en");
     $("lang-wo")?.classList.toggle("active", CURRENT_LANG === "wo");
@@ -1329,13 +1316,13 @@
       const { data, error } = await sb.rpc("digiy_driver_public_gallery");
       if(error) throw error;
       ALL = withBaptiste(data);
-      rebuildZoneOptions(ALL); refreshTopStats();
+      refreshTopStats();
       liveBadge.textContent = t("badge_public"); badgeTop.textContent = t("badge_public");
       render();
     }catch(e){
       console.warn("DIGIY DRIVER gallery error:", e);
       ALL = [{ ...BAPTISTE_DRIVER }];
-      rebuildZoneOptions(ALL); refreshTopStats();
+      refreshTopStats();
       liveBadge.textContent = t("badge_fallback"); badgeTop.textContent = t("badge_fallback");
       render();
       toast(t("toast_fallback"));
@@ -1345,78 +1332,73 @@
   $("lang-fr").addEventListener("click",()=>applyLanguage("fr"));
   $("lang-en").addEventListener("click",()=>applyLanguage("en"));
   $("lang-wo").addEventListener("click",()=>applyLanguage("wo"));
-  zoneFilter.addEventListener("change",render);
-  availFilter.addEventListener("change",render);
-  qFilter.addEventListener("input",()=>{clearTimeout(searchTimer); searchTimer=setTimeout(render,120);});
 
   applyLanguage(CURRENT_LANG);
   load();
 </script>
 
+<!-- ===== SCRIPT DU FORMULAIRE (comme sur Lamine) ===== -->
+<script>
+  "use strict";
+
+  const form = document.getElementById("tripForm");
+
+  function value(id) {
+    return document.getElementById(id).value.trim();
+  }
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const lines = [
+      "Bonjour Baptiste,",
+      "Je vous contacte depuis votre fiche DIGIY DRIVER.",
+      "",
+      "Je souhaite préparer une course :"
+    ];
+
+    const fields = [
+      ["Date", value("date")],
+      ["Heure", value("time")],
+      ["Départ", value("from")],
+      ["Destination", value("to")],
+      ["Passagers", value("passengers")],
+      ["Bagages", value("bags")],
+      ["Précision", value("note")]
+    ];
+
+    fields.forEach(([label, fieldValue]) => {
+      if (fieldValue) lines.push(`${label} : ${fieldValue}`);
+    });
+
+    lines.push("", "Pouvez-vous me confirmer votre disponibilité et le tarif ?");
+
+    // Numéro WhatsApp de Baptiste
+    const url = "https://wa.me/221771342889?text=" + encodeURIComponent(lines.join("\n"));
+    window.open(url, "_blank", "noopener");
+  });
+</script>
+
+<!-- ===== AUDIO (personnalisé) ===== -->
 <script>
 (function(){
   const btn = document.getElementById("digiy-audio-driver");
   if(!btn || !("speechSynthesis" in window)) return;
 
   const TEXTS = {
-    fr: "Bienvenue sur la fiche DIGIY DRIVER de Baptiste. Cette page présente son profil, ses trajets proposés, son QR officiel DIGIYLYFE et ses moyens de contact lorsqu’ils sont disponibles. Le client voit, comprend et demande son trajet directement. Zéro commission DIGIY. La valeur du trajet reste dans la main du chauffeur.",
-    en: "Welcome to Baptiste’s DIGIY DRIVER profile. This page presents his profile, suggested rides, official DIGIYLYFE QR and contact options when available. The client sees, understands and requests the ride directly. Zero DIGIY commission. The value of the ride stays in the driver’s hands.",
-    wo: "Bienvenue ci DIGIY DRIVER. Fii, chauffeur bi du réer ci mbooloo mi. Dafa am photo, zone, voiture, QR officiel DIGIYLYFE ak WhatsApp direct. Client bi gis, scan, jokkook, te laaj trajet bi directement. Zéro commission. Xalisu trajet bi des na ci loxou chauffeur bi."
+    fr: "Bienvenue sur la fiche DIGIY DRIVER de Baptiste. Baptiste est un chauffeur ambassadeur. Cette page présente son profil, ses trajets proposés, son QR officiel DIGIYLYFE et ses moyens de contact lorsqu’ils sont disponibles. Le client voit, comprend et demande son trajet directement. Zéro commission DIGIY. La valeur du trajet reste dans la main du chauffeur.",
+    en: "Welcome to Baptiste’s DIGIY DRIVER profile. Baptiste is an ambassador driver. This page presents his profile, suggested rides, official DIGIYLYFE QR and contact options when available. The client sees, understands and requests the ride directly. Zero DIGIY commission. The value of the ride stays in the driver’s hands.",
+    wo: "Bienvenue ci fiche DIGIY DRIVER de Baptiste. Baptiste mooy chauffeur ambassadeur. Fii, am na photo, zone, voiture, QR officiel DIGIYLYFE ak WhatsApp direct. Client bi gis, scan, jokkook, te laaj trajet bi directement. Zéro commission. Xalisu trajet bi des na ci loxou chauffeur bi."
   };
 
-  const LABELS = {
-    fr: { play:"🎧 Écouter DIGIY", stop:"■ Arrêter", lang:"fr-FR" },
-    en: { play:"🎧 Listen to DIGIY", stop:"■ Stop", lang:"en-US" },
-    wo: { play:"🎧 Écouter DIGIY", stop:"■ Stop", lang:"fr-FR" }
-  };
+  const LABELS = { fr: { play:"🎧 Écouter DIGIY", stop:"■ Arrêter", lang:"fr-FR" }, en: { play:"🎧 Listen to DIGIY", stop:"■ Stop", lang:"en-US" }, wo: { play:"🎧 Écouter DIGIY", stop:"■ Stop", lang:"fr-FR" } };
 
-  function currentLang(){
-    const htmlLang = (document.documentElement.getAttribute("lang") || "fr").toLowerCase();
-    if(htmlLang.startsWith("en")) return "en";
-    if(htmlLang.startsWith("wo")) return "wo";
-    return "fr";
-  }
-
-  function digiySpeakText(text, lang){
-    let out = String(text || "")
-      .replace(/0\s*%/g, lang === "en" ? "zero percent" : "zéro pour cent")
-      .replace(/\bQR\b/g, "Q R")
-      .replace(/\bSMS\b/g, "S M S")
-      .replace(/\bWhatsApp\b/g, "Ouatsap")
-      .replace(/\bDIGIYLYFE\b/g, "Di-ji-laïf")
-      .replace(/\bDIGIY\b/g, "Di-ji");
-    return out;
-  }
-
-  const synth = window.speechSynthesis;
-  let playing = false;
-
-  function resetButton(){
-    playing = false;
-    const lang = currentLang();
-    btn.textContent = (LABELS[lang] || LABELS.fr).play;
-  }
-
-  function stop(){
-    synth.cancel();
-    resetButton();
-  }
-
-  function play(){
-    const lang = currentLang();
-    const labels = LABELS[lang] || LABELS.fr;
-    synth.cancel();
-    const utt = new SpeechSynthesisUtterance(digiySpeakText(TEXTS[lang] || TEXTS.fr, lang));
-    utt.lang = labels.lang;
-    utt.rate = lang === "en" ? .90 : .86;
-    utt.pitch = 1.02;
-    utt.onend = resetButton;
-    utt.onerror = resetButton;
-    synth.speak(utt);
-    playing = true;
-    btn.textContent = labels.stop;
-  }
-
+  function currentLang(){ const htmlLang = (document.documentElement.getAttribute("lang") || "fr").toLowerCase(); if(htmlLang.startsWith("en")) return "en"; if(htmlLang.startsWith("wo")) return "wo"; return "fr"; }
+  function digiySpeakText(text, lang){ let out = String(text || "").replace(/0\s*%/g, lang === "en" ? "zero percent" : "zéro pour cent").replace(/\bQR\b/g, "Q R").replace(/\bSMS\b/g, "S M S").replace(/\bWhatsApp\b/g, "Ouatsap").replace(/\bDIGIYLYFE\b/g, "Di-ji-laïf").replace(/\bDIGIY\b/g, "Di-ji"); return out; }
+  const synth = window.speechSynthesis; let playing = false;
+  function resetButton(){ playing = false; const lang = currentLang(); btn.textContent = (LABELS[lang] || LABELS.fr).play; }
+  function stop(){ synth.cancel(); resetButton(); }
+  function play(){ const lang = currentLang(); const labels = LABELS[lang] || LABELS.fr; synth.cancel(); const utt = new SpeechSynthesisUtterance(digiySpeakText(TEXTS[lang] || TEXTS.fr, lang)); utt.lang = labels.lang; utt.rate = lang === "en" ? .90 : .86; utt.pitch = 1.02; utt.onend = resetButton; utt.onerror = resetButton; synth.speak(utt); playing = true; btn.textContent = labels.stop; }
   btn.addEventListener("click",()=> playing ? stop() : play());
   window.addEventListener("digiy-lang-change", stop);
   window.addEventListener("pagehide",stop);
@@ -1424,31 +1406,22 @@
 })();
 </script>
 
-<!-- DIGIY DRIVER AMBASSADEUR — QR officiel DIGIYLYFE ajouté — 20260619 -->
-
+<!-- ===== SHARE CARD ===== -->
 <script>
 (function(){
   const button = document.getElementById("shareBusinessCardBtn");
   if(!button) return;
-
   const profileUrl = "https://digiy-driver-part-bapt.digiylyfe.com/";
   const cardUrl = new URL("carte-visite-baptiste.png", location.href).href;
   const title = "Baptiste — Chauffeur ambassadeur DIGIY DRIVER";
   const text = "Carte de visite de Baptiste : contact direct, paiement direct et 0% commission DIGIY.";
-
   button.addEventListener("click", async () => {
     try {
-      if(navigator.share){
-        await navigator.share({ title, text, url: profileUrl });
-        return;
-      }
+      if(navigator.share){ await navigator.share({ title, text, url: profileUrl }); return; }
       await navigator.clipboard.writeText(`${text}\n${profileUrl}\n${cardUrl}`);
       button.textContent = "✅ Liens copiés";
       setTimeout(() => button.textContent = "📤 Partager la fiche", 2200);
-    } catch(error) {
-      if(error && error.name === "AbortError") return;
-      window.open("https://wa.me/?text=" + encodeURIComponent(text + "\n" + profileUrl), "_blank", "noopener");
-    }
+    } catch(error) { if(error && error.name === "AbortError") return; window.open("https://wa.me/?text=" + encodeURIComponent(text + "\n" + profileUrl), "_blank", "noopener"); }
   });
 })();
 </script>

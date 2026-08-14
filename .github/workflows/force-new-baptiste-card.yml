@@ -1,0 +1,35 @@
+name: Forcer nouvelle carte Baptiste
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/force-new-baptiste-card.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Créer un nouveau fichier carte et mettre à jour la fiche
+        run: |
+          cp carte-visite-baptiste.png carte-visite-baptiste-adherent.png
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('carte-visite-baptiste.png', 'carte-visite-baptiste-adherent.png')
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit et push
+        run: |
+          git config user.name 'DIGIYLYFE Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html carte-visite-baptiste-adherent.png
+          git commit -m 'Forcer la nouvelle carte Baptiste adhérent' || exit 0
+          git push

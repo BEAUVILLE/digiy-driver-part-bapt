@@ -1,0 +1,30 @@
+name: Driver owner carnet listing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-driver-owner-trip-listing.py'
+      - '.github/workflows/apply-driver-owner-trip-listing.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch gestion
+        run: python tools/patch-driver-owner-trip-listing.py
+      - name: Commit gestion
+        run: |
+          if git diff --quiet -- gestion.html; then
+            echo "Aucun changement"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gestion.html
+          git commit -m "Fiabiliser la lecture du carnet DRIVER propriétaire"
+          git push

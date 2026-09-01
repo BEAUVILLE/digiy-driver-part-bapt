@@ -1,0 +1,43 @@
+name: Ajouter accès adhérent DRIVER Baptiste
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-member-access-driver.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ajouter le bouton accès adhérent
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='<div class="actions"><a href="https://digiylyfe.com/" data-k="1"></a><a href="https://galerie-chauffeurs.digiylyfe.com/" data-k="2"></a></div>'
+          new='<div class="actions"><a href="https://digiylyfe.com/" data-k="1"></a><a href="https://galerie-chauffeurs.digiylyfe.com/" data-k="2"></a><a href="./gestion.html">🔐 ACCÈS ADHÉRENT</a></div>'
+          if 'href="./gestion.html"' in s:
+              print('Accès adhérent déjà présent')
+          elif old not in s:
+              raise SystemExit('Ancre en-tête introuvable : aucun changement')
+          else:
+              p.write_text(s.replace(old,new,1))
+              print('Accès adhérent ajouté')
+          PY
+      - name: Publier uniquement la fiche publique
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Aucun changement"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Ajouter accès adhérent au DRIVER Baptiste"
+          git push

@@ -1,0 +1,61 @@
+name: Ajouter acceptation demandes DRIVER
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-driver-acceptance-flow.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ajouter acceptation et indisponibilité
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('gestion.html')
+          s=p.read_text()
+
+          css='.badge.done{background:#e1f4e8;color:#245035}'
+          if '.badge.unavailable' not in s:
+              s=s.replace(css,css+'.badge.unavailable{background:#fde8e7;color:#8f201a}',1)
+
+          old="function label(s){return s==='request'?'Demande client':s==='done'?'Terminé':s==='in_progress'?'En cours':'À faire'}"
+          new="function label(s){return s==='request'?'Demande client':s==='unavailable'?'Indisponible':s==='done'?'Terminé':s==='in_progress'?'En cours':'À faire'}"
+          if old in s:s=s.replace(old,new,1)
+          elif "s==='unavailable'?'Indisponible'" not in s:raise SystemExit('label introuvable')
+
+          start=s.find('function rideMsg(r){')
+          end=s.find('}function render(){',start)
+          if start<0 or end<0:raise SystemExit('rideMsg introuvable')
+          ride="""function rideMsg(r){const when=fmt(r.ride_day)+(r.ride_time?' à '+String(r.ride_time).slice(0,5):'');if(r.status==='request')return'Bonjour '+r.client_name+', j’ai bien reçu votre demande de trajet '+r.pickup+' → '+r.destination+' pour le '+when+'. Je vérifie ma disponibilité et je vous confirme rapidement.';if(r.status==='unavailable')return'Bonjour '+r.client_name+', merci pour votre demande de trajet '+r.pickup+' → '+r.destination+' pour le '+when+'. Je ne suis malheureusement pas disponible pour cette demande.';if(r.status==='todo')return'Bonjour '+r.client_name+', je vous confirme que je peux assurer votre trajet '+r.pickup+' → '+r.destination+' le '+when+'.';if(r.status==='in_progress')return'Bonjour '+r.client_name+', concernant votre trajet '+r.pickup+' → '+r.destination+', je suis en route.';return'Bonjour '+r.client_name+', merci pour votre trajet '+r.pickup+' → '+r.destination+'.'}"""
+          s=s[:start]+ride+s[end+1:]
+
+          old_badge="b.className='badge'+(r.status==='done'?' done':r.status==='in_progress'?' progress':'')"
+          new_badge="b.className='badge'+(r.status==='done'?' done':r.status==='unavailable'?' unavailable':r.status==='in_progress'?' progress':'')"
+          if old_badge in s:s=s.replace(old_badge,new_badge,1)
+          elif "r.status==='unavailable'?' unavailable'" not in s:raise SystemExit('badge introuvable')
+
+          old_list="[['request','Demande client'],['todo','À faire'],['in_progress','En cours'],['done','Terminé']]"
+          new_list="[['request','Demande client'],['todo','À faire'],['unavailable','Indisponible'],['in_progress','En cours'],['done','Terminé']]"
+          if old_list in s:s=s.replace(old_list,new_list,1)
+          elif "['unavailable','Indisponible']" not in s:raise SystemExit('statuts introuvables')
+
+          p.write_text(s)
+          PY
+      - name: Publier gestion.html uniquement
+        run: |
+          if git diff --quiet -- gestion.html; then
+            echo "Aucun changement"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gestion.html
+          git commit -m "Prévoir acceptation ou indisponibilité du chauffeur"
+          git push

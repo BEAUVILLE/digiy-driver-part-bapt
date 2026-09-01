@@ -1,0 +1,43 @@
+name: Afficher statut Demande client DRIVER
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/show-client-request-status.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ajouter le statut demande client
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('gestion.html')
+          s=p.read_text()
+          old="function label(s){return s==='done'?'Terminé':s==='in_progress'?'En cours':'À faire'}"
+          new="function label(s){return s==='request'?'Demande client':s==='done'?'Terminé':s==='in_progress'?'En cours':'À faire'}"
+          if old in s:s=s.replace(old,new,1)
+          elif "s==='request'?'Demande client'" not in s:raise SystemExit('Fonction label introuvable')
+          old2="[['todo','À faire'],['in_progress','En cours'],['done','Terminé']]"
+          new2="[['request','Demande client'],['todo','À faire'],['in_progress','En cours'],['done','Terminé']]"
+          if old2 in s:s=s.replace(old2,new2,1)
+          elif "['request','Demande client']" not in s:raise SystemExit('Liste statuts introuvable')
+          p.write_text(s)
+          PY
+      - name: Publier gestion.html uniquement
+        run: |
+          if git diff --quiet -- gestion.html; then
+            echo "Aucun changement"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gestion.html
+          git commit -m "Afficher les demandes client dans le carnet DRIVER"
+          git push

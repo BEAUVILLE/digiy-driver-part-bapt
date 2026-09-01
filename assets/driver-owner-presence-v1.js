@@ -1,4 +1,4 @@
-/* DIGIY DRIVER LIVE PRESENCE V1 — accès adhérent */
+/* DIGIY DRIVER LIVE PRESENCE V2 — accès adhérent avec vérification DB */
 (()=>{
 'use strict';
 const URL='https://wesqmwjjtsefyjnluosj.supabase.co';
@@ -13,10 +13,10 @@ function fill(){if(!member)return;const s=$('presenceStatus'),z=$('presenceSecto
 
 async function load(){
   const {data:{session}}=await db.auth.getSession();
-  if(!session)return;
+  if(!session)return null;
   const {data,error}=await db.from('digiy_driver_master_members').select('id,availability_status,current_sector,presence_updated_at').eq('slug',slug).eq('is_active',true).maybeSingle();
-  if(error||!data)return;
-  member=data;fill();
+  if(error||!data)return null;
+  member=data;fill();return data;
 }
 
 async function save(){
@@ -26,11 +26,16 @@ async function save(){
   const sector=$('presenceSector')?.value||'';
   const b=$('savePresence');if(b)b.disabled=true;msg('Mise à jour…');
   const {data,error}=await db.rpc('digiy_driver_master_set_presence_v1',{p_driver_id:member.id,p_status:status,p_sector:sector||null});
+  if(error||!data||!data.length){if(b)b.disabled=false;return msg('⚠️ Mise à jour impossible.',true)}
+  const {data:check,error:checkError}=await db.from('digiy_driver_master_members').select('id,availability_status,current_sector,presence_updated_at').eq('id',member.id).maybeSingle();
   if(b)b.disabled=false;
-  if(error||!data||!data.length)return msg('⚠️ Mise à jour impossible.',true);
-  member={...member,...data[0]};
+  if(checkError||!check)return msg('⚠️ Mise à jour non vérifiée.',true);
+  const sectorOk=(check.current_sector||'')===sector;
+  const statusOk=check.availability_status===status;
+  if(!statusOk||!sectorOk){member=check;fill();return msg('⚠️ La base ne confirme pas exactement le statut et le secteur. Réessayez.',true)}
+  member=check;
   try{localStorage.setItem('digiy-driver-baptiste-presence-sync',String(Date.now()))}catch(_){ }
-  msg('✓ Votre disponibilité et votre secteur sont publiés pour 4 heures.');
+  msg('✓ Disponibilité '+status+' · secteur '+(sector||'à confirmer')+' confirmés en base pour 4 heures.');
 }
 
 function bind(){const b=$('savePresence');if(b&&!b.dataset.bound){b.dataset.bound='1';b.addEventListener('click',save)}load()}

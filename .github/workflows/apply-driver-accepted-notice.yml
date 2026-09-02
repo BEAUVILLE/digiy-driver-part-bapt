@@ -1,0 +1,29 @@
+name: Driver accepted notice
+on:
+  push:
+    paths:
+      - 'tools/patch_driver_accepted_notice.py'
+      - '.github/workflows/apply-driver-accepted-notice.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python tools/patch_driver_accepted_notice.py
+      - name: Commit
+        run: |
+          if git diff --quiet -- gestion.html; then
+            echo "No change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gestion.html
+          git commit -m "Clarifier la confirmation client après acceptation DRIVER"
+          git push

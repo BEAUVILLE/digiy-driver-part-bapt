@@ -1,0 +1,36 @@
+name: Restaurer accès adhérent statique DRIVER
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/restore-owner-access-static.yml']
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poser accès adhérent statique
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          if 'href="https://digiy-driver-part-bapt.digiylyfe.com/gestion.html"' in s:
+              raise SystemExit('accès adhérent déjà présent')
+          marker='<a href="https://galerie-chauffeurs.digiylyfe.com/" data-k="2"></a>'
+          if marker not in s:
+              raise SystemExit('marqueur DRIVER introuvable')
+          link='<a href="https://digiy-driver-part-bapt.digiylyfe.com/gestion.html" rel="nofollow">🔐 ACCÈS ADHÉRENT</a>'
+          p.write_text(s.replace(marker,marker+link,1))
+          PY
+      - name: Vérifier
+        run: |
+          grep -q 'https://digiy-driver-part-bapt.digiylyfe.com/gestion.html' index.html
+      - name: Commit
+        run: |
+          git config user.name 'DIGIY LYFE'
+          git config user.email 'baptistejb24@gmail.com'
+          git add index.html
+          git commit -m 'Restaurer accès adhérent discret DRIVER'
+          git push
